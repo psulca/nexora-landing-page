@@ -4,7 +4,7 @@ import type React from "react"
 
 import { cn } from "@/lib/utils"
 import { useMotionValue, animate, motion } from "framer-motion"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import useMeasure from "react-use-measure"
 
 type InfiniteSliderProps = {
@@ -31,16 +31,26 @@ export function InfiniteSlider({
   const translation = useMotionValue(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
   const [key, setKey] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
+  const controlsRef = useRef<any>(null)
 
   useEffect(() => {
-    let controls
     const size = direction === "horizontal" ? width : height
     const contentSize = size + gap
     const from = reverse ? -contentSize / 2 : 0
     const to = reverse ? 0 : -contentSize / 2
 
+    // Si está pausado, detener la animación actual pero mantener la posición
+    if (isPaused) {
+      if (controlsRef.current) {
+        controlsRef.current.stop()
+      }
+      return
+    }
+
+    // Si se reanuda, continuar desde la posición actual
     if (isTransitioning) {
-      controls = animate(translation, [translation.get(), to], {
+      controlsRef.current = animate(translation, [translation.get(), to], {
         ease: "linear",
         duration: currentDuration * Math.abs((translation.get() - to) / contentSize),
         onComplete: () => {
@@ -49,20 +59,25 @@ export function InfiniteSlider({
         },
       })
     } else {
-      controls = animate(translation, [from, to], {
+      // Calcular desde dónde empezar basado en la posición actual
+      const currentPos = translation.get()
+      controlsRef.current = animate(translation, [currentPos, to], {
         ease: "linear",
-        duration: currentDuration,
-        repeat: Number.POSITIVE_INFINITY,
-        repeatType: "loop",
-        repeatDelay: 0,
-        onRepeat: () => {
+        duration: currentDuration * Math.abs((currentPos - to) / contentSize),
+        onComplete: () => {
+          // Cuando termina, reiniciar desde el inicio
           translation.set(from)
+          setKey((prevKey) => prevKey + 1)
         },
       })
     }
 
-    return controls?.stop
-  }, [key, translation, currentDuration, width, height, gap, isTransitioning, direction, reverse])
+    return () => {
+      if (controlsRef.current) {
+        controlsRef.current.stop()
+      }
+    }
+  }, [key, translation, currentDuration, width, height, gap, isTransitioning, direction, reverse, isPaused])
 
   const hoverProps = durationOnHover
     ? {
@@ -75,7 +90,14 @@ export function InfiniteSlider({
           setCurrentDuration(duration)
         },
       }
-    : {}
+    : {
+        onMouseEnter: () => {
+          setIsPaused(true)
+        },
+        onMouseLeave: () => {
+          setIsPaused(false)
+        },
+      }
 
   return (
     <div className={cn("overflow-hidden", className)}>

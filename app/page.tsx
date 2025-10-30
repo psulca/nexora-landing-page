@@ -31,37 +31,30 @@ function Badge({ icon, text }: { icon: React.ReactNode; text: string }) {
 export default function LandingPage() {
   const [activeCard, setActiveCard] = useState(0)
   const [progress, setProgress] = useState(0)
-  const mountedRef = useRef(true)
+  const progressRef = useRef(0)
 
   useEffect(() => {
     const progressInterval = setInterval(() => {
-      if (!mountedRef.current) return
-
-      setProgress((prev) => {
-        if (prev >= 100) {
-          if (mountedRef.current) {
-            setActiveCard((current) => (current + 1) % 3)
-          }
-          return 0
-        }
-        return prev + 2 // 2% every 100ms = 5 seconds total
-      })
+      progressRef.current += 2
+      
+      if (progressRef.current >= 100) {
+        progressRef.current = 0
+        setActiveCard((current) => {
+          const next = (current + 1) % 3
+          return next
+        })
+        setProgress(0)
+      } else {
+        setProgress(progressRef.current)
+      }
     }, 100)
 
     return () => {
       clearInterval(progressInterval)
-      mountedRef.current = false
-    }
-  }, [])
-
-  useEffect(() => {
-    return () => {
-      mountedRef.current = false
     }
   }, [])
 
   const handleCardClick = (index: number) => {
-    if (!mountedRef.current) return
     setActiveCard(index)
     setProgress(0)
   }
@@ -80,10 +73,10 @@ export default function LandingPage() {
   }
 
   return (
-    <div className="w-full min-h-screen relative bg-[#F7F5F3] overflow-x-hidden flex flex-col justify-start items-center">
+    <div className="w-full min-h-screen relative bg-[#F7F5F3] flex flex-col justify-start items-center">
       <Header />
 
-      <div className="relative flex flex-col justify-start items-center w-full">
+      <div className="relative flex flex-col justify-start items-center w-full overflow-x-hidden">
         {/* Main container with proper margins */}
         <div className="w-full max-w-none px-4 sm:px-6 md:px-8 lg:px-0 lg:max-w-[1060px] lg:w-[1060px] relative flex flex-col justify-start items-start min-h-screen">
           {/* Left vertical line */}
@@ -118,10 +111,6 @@ export default function LandingPage() {
                     </div>
                   </div>
                 </div>
-              </div>
-
-              <div className="w-full max-w-[960px] lg:w-[960px] mt-12 sm:mt-16 md:mt-20 lg:mt-24 px-2 sm:px-4 md:px-6 lg:px-0 relative z-5">
-                <VolunteerSearch />
               </div>
 
               <div className="absolute top-[232px] sm:top-[248px] md:top-[264px] lg:top-[320px] left-1/2 transform -translate-x-1/2 z-0 pointer-events-none">

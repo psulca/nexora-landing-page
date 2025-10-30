@@ -1,93 +1,67 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Search, MapPin, Briefcase, Calendar } from "lucide-react"
+import { useState } from "react";
+import { SearchIcon, MapPin } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group";
 
 export function VolunteerSearch() {
   const [filters, setFilters] = useState({
     category: "",
+    search: "",
     location: "",
-    modality: "",
-    date: "",
-  })
+  });
 
   return (
-    <div className="w-full bg-white border border-[rgba(55,50,47,0.12)] rounded-lg p-6 sm:p-8 shadow-sm">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div className="w-full p-3">
+      <div className="flex items-center gap-3">
         {/* Category Filter */}
-        <div className="flex flex-col gap-2">
-          <label className="text-[#37322F] text-sm font-medium font-sans">Categoría</label>
-          <div className="relative flex items-center">
-            <Briefcase className="absolute left-3 w-4 h-4 text-[#605A57]" />
-            <select
-              value={filters.category}
-              onChange={(e) => setFilters({ ...filters, category: e.target.value })}
-              className="w-full pl-10 pr-4 py-2 border border-[rgba(55,50,47,0.12)] rounded-md text-[#37322F] text-sm font-sans focus:outline-none focus:ring-2 focus:ring-[#37322F]/20"
-            >
-              <option value="">Todas las categorías</option>
-              <option value="education">Educación</option>
-              <option value="health">Salud</option>
-              <option value="environment">Medio Ambiente</option>
-              <option value="social">Social</option>
-            </select>
-          </div>
-        </div>
+        <Select
+          value={filters.category}
+          onValueChange={(value) => setFilters({ ...filters, category: value })}
+        >
+          <SelectTrigger className="text-[#37322F] bg-white font-sans">
+            <SelectValue placeholder="Todas las categorías" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="all">Todas las categorías</SelectItem>
+            <SelectItem value="education">Educación</SelectItem>
+            <SelectItem value="health">Salud</SelectItem>
+            <SelectItem value="environment">Medio Ambiente</SelectItem>
+            <SelectItem value="social">Social</SelectItem>
+          </SelectContent>
+        </Select>
+
+        {/* Search Input */}
+        <InputGroup className="text-[#37322F] bg-white font-sans">
+          <InputGroupInput placeholder="Buscar por palabra clave o interés" />
+        </InputGroup>
 
         {/* Location Filter */}
-        <div className="flex flex-col gap-2">
-          <label className="text-[#37322F] text-sm font-medium font-sans">Ubicación</label>
-          <div className="relative flex items-center">
-            <MapPin className="absolute left-3 w-4 h-4 text-[#605A57]" />
-            <input
-              type="text"
-              placeholder="Ciudad o región"
-              value={filters.location}
-              onChange={(e) => setFilters({ ...filters, location: e.target.value })}
-              className="w-full pl-10 pr-4 py-2 border border-[rgba(55,50,47,0.12)] rounded-md text-[#37322F] text-sm font-sans placeholder-[#605A57] focus:outline-none focus:ring-2 focus:ring-[#37322F]/20"
-            />
-          </div>
+        <div className="w-90">
+          <InputGroup className="text-[#37322F] bg-white font-sans">
+            <InputGroupInput placeholder="En cualquier lugar" />
+            <InputGroupAddon>
+              <MapPin />
+            </InputGroupAddon>
+          </InputGroup>
         </div>
 
-        {/* Modality Filter */}
-        <div className="flex flex-col gap-2">
-          <label className="text-[#37322F] text-sm font-medium font-sans">Modalidad</label>
-          <select
-            value={filters.modality}
-            onChange={(e) => setFilters({ ...filters, modality: e.target.value })}
-            className="w-full px-4 py-2 border border-[rgba(55,50,47,0.12)] rounded-md text-[#37322F] text-sm font-sans focus:outline-none focus:ring-2 focus:ring-[#37322F]/20"
-          >
-            <option value="">Todas</option>
-            <option value="presencial">Presencial</option>
-            <option value="remoto">Remoto</option>
-            <option value="hibrido">Híbrido</option>
-          </select>
-        </div>
-
-        {/* Date Filter */}
-        <div className="flex flex-col gap-2">
-          <label className="text-[#37322F] text-sm font-medium font-sans">Fecha</label>
-          <div className="relative flex items-center">
-            <Calendar className="absolute left-3 w-4 h-4 text-[#605A57]" />
-            <input
-              type="date"
-              value={filters.date}
-              onChange={(e) => setFilters({ ...filters, date: e.target.value })}
-              className="w-full pl-10 pr-4 py-2 border border-[rgba(55,50,47,0.12)] rounded-md text-[#37322F] text-sm font-sans focus:outline-none focus:ring-2 focus:ring-[#37322F]/20"
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Search Button */}
-      <div className="mt-6 flex gap-3">
-        <button className="flex-1 md:flex-none px-8 py-2.5 bg-[#37322F] text-white rounded-md font-medium text-sm font-sans hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
-          <Search className="w-4 h-4" />
-          Buscar oportunidades
-        </button>
-        <button className="px-6 py-2.5 border border-[rgba(55,50,47,0.12)] text-[#37322F] rounded-md font-medium text-sm font-sans hover:bg-[#37322F]/5 transition-colors">
-          Limpiar filtros
+        {/* Search Button */}
+        <button className="px-6 py-2 bg-[#37322F] text-white rounded-md font-medium text-sm font-sans hover:opacity-90 transition-opacity whitespace-nowrap">
+          Buscar
         </button>
       </div>
     </div>
-  )
+  );
 }
