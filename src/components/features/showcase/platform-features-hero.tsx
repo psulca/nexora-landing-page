@@ -2,7 +2,6 @@
 
 import { HeroDashboardPreview } from "@/components/features/hero/hero-dashboard-preview"
 import { HeroFeatureCards } from "@/components/features/hero/hero-feature-cards"
-import { HeroBackgroundPattern } from "@/components/features/hero/hero-background-pattern"
 import { useCarouselProgress } from "@/lib/hooks"
 import { APP_TEXT } from "@/lib/config"
 
@@ -23,20 +22,30 @@ export function PlatformFeaturesHero({
   })
 
   return (
-    <div className="w-full relative flex flex-col justify-start items-center py-4 sm:py-6 md:py-8">
-      {/* Background Pattern */}
-      <HeroBackgroundPattern />
+    <div className="w-full bg-[#FFC942] border-t-4 border-b-4 border-black flex flex-col justify-center items-center">
+      {/* Section Header */}
+      <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 flex justify-center items-center">
+        <div className="w-full max-w-[1000px] flex flex-col justify-center items-center gap-3 sm:gap-4">
+          <h2 className="text-center text-black text-2xl sm:text-3xl md:text-4xl font-black leading-tight font-darker-grotesque tracking-tight">
+            Cómo funciona Nexora
+          </h2>
+        </div>
+      </div>
 
       {/* Dashboard Preview */}
-      <HeroDashboardPreview images={finalDashboardImages} activeIndex={activeCard} />
+      <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 pb-4 sm:pb-6 md:pb-8 flex justify-center items-center">
+        <HeroDashboardPreview images={finalDashboardImages} activeIndex={activeCard} />
+      </div>
 
       {/* Feature Cards */}
-      <HeroFeatureCards
-        cards={finalFeatureCards}
-        activeIndex={activeCard}
-        progress={progress}
-        onCardClick={handleItemClick}
-      />
+      <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 pb-8 sm:pb-12 md:pb-16 flex justify-center items-center">
+        <HeroFeatureCards
+          cards={finalFeatureCards}
+          activeIndex={activeCard}
+          progress={progress}
+          onCardClick={handleItemClick}
+        />
+      </div>
     </div>
   )
 }

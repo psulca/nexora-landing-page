@@ -3,6 +3,24 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face {
+  font-family: 'Lanze Halbred';
+  src: url('/Lanze-Halbred.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-lanze-halbred {
+  font-family: 'Lanze Halbred', serif;
+}
+
+.font-darker-grotesque {
+  font-family: var(--font-darker-grotesque), sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

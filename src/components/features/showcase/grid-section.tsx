@@ -1,9 +1,6 @@
 "use client"
 
 import type React from "react"
-import { DecorativePattern } from "@/components/ui/decorative-pattern"
-import { SectionHeader } from "@/components/ui/section-header"
-import { COLORS } from "@/lib/config"
 
 export interface GridItem {
   title: string
@@ -13,37 +10,34 @@ export interface GridItem {
 }
 
 interface GridSectionProps {
-  badge?: {
-    icon?: React.ReactNode
-    text: string
-  }
   title: string
   description: string
   items: GridItem[]
   className?: string
 }
 
-export function GridSection({ badge, title, description, items, className }: GridSectionProps) {
+export function GridSection({ title, description, items, className }: GridSectionProps) {
   return (
-    <div className={`w-full border-b border-[rgba(55,50,47,0.12)] flex flex-col justify-center items-center ${className || ""}`}>
+    <div className={`w-full bg-[#F97930] border-t-4 border-b-4 border-black flex flex-col justify-center items-center ${className || ""}`}>
       {/* Header Section */}
-      <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-0 lg:max-w-[1060px] lg:w-[1060px] py-8 sm:py-12 md:py-16 border-b border-[rgba(55,50,47,0.12)] flex justify-center items-center gap-6">
-        <SectionHeader badge={badge} title={title} description={description} />
+      <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 lg:py-10 flex justify-center items-center">
+        <div className="w-full max-w-[1000px] flex flex-col justify-start items-center gap-4 sm:gap-6">
+          <div className="w-full text-center flex justify-center flex-col text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight md:leading-[50px] font-darker-grotesque tracking-tight">
+            {title}
+          </div>
+          <div className="w-full max-w-[700px] text-center text-white text-sm sm:text-base font-bold leading-6 sm:leading-7 font-sans">
+            {description}
+          </div>
+        </div>
       </div>
 
       {/* Grid Content */}
-      <div className="self-stretch flex justify-center items-start">
-        <div className="w-4 sm:w-6 md:w-8 lg:w-12 self-stretch relative overflow-hidden">
-          <DecorativePattern count={200} />
-        </div>
-
-        <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-0 border-l border-r border-[rgba(55,50,47,0.12)]">
+      <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 lg:py-10 flex justify-center items-start">
+        <div className="w-full max-w-[1000px] grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {items.map((item, index) => (
             <div
               key={index}
-              className={`border-b border-[rgba(55,50,47,0.12)] p-4 sm:p-6 md:p-8 lg:p-12 flex flex-col justify-start items-start gap-4 sm:gap-6 ${
-                index % 2 === 0 ? "md:border-r" : ""
-              } ${index < 2 ? "md:border-b-[0.5px]" : ""}`}
+              className="bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-4 sm:p-6 md:p-8 flex flex-col justify-start items-start gap-4 sm:gap-6"
             >
               {/* Icon (for icon-based items, shown first) */}
               {item.icon && !item.image && (
@@ -52,10 +46,10 @@ export function GridSection({ badge, title, description, items, className }: Gri
 
               {/* Content */}
               <div className="flex flex-col gap-2">
-                <h3 className="text-[#37322F] text-lg sm:text-xl font-semibold leading-tight font-sans">
+                <h3 className="text-black text-lg sm:text-xl font-bold leading-tight font-darker-grotesque">
                   {item.title}
                 </h3>
-                <p className="text-[#605A57] text-sm md:text-base font-normal leading-relaxed font-sans">
+                <p className="text-black text-sm md:text-base font-medium leading-relaxed font-sans">
                   {item.description}
                 </p>
               </div>
@@ -68,10 +62,6 @@ export function GridSection({ badge, title, description, items, className }: Gri
               )}
             </div>
           ))}
-        </div>
-
-        <div className="w-4 sm:w-6 md:w-8 lg:w-12 self-stretch relative overflow-hidden">
-          <DecorativePattern count={200} />
         </div>
       </div>
     </div>

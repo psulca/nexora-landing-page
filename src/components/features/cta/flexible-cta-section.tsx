@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-import { CTAButton } from "@/components/ui/cta-button"
 
 interface FlexibleCTASectionProps {
   title: string
@@ -27,58 +26,55 @@ export function FlexibleCTASection({
   showBackgroundPattern = false,
 }: FlexibleCTASectionProps) {
   return (
-    <div className={`w-full ${showBackgroundPattern ? "relative overflow-hidden" : ""} flex flex-col justify-center items-center gap-2`}>
-      {/* Background Pattern (optional) */}
-      {showBackgroundPattern && (
-        <div className="absolute inset-0 w-full h-full overflow-hidden">
-          <div className="w-full h-full relative">
-            {Array.from({ length: 300 }).map((_, i) => (
-              <div
-                key={i}
-                className="absolute h-4 w-full rotate-[-45deg] origin-top-left outline-[0.5px] outline-[rgba(3,7,18,0.08)] outline-offset-[-0.25px]"
-                style={{
-                  top: `${i * 16 - 120}px`,
-                  left: "-100%",
-                  width: "300%",
-                }}
-              />
-            ))}
-          </div>
-        </div>
-      )}
-
+    <div className="w-full bg-[#FFC942] border-t-4 border-black flex flex-col justify-center items-center py-36">
       {/* Content */}
-      <div className={`self-stretch px-6 md:px-24 py-12 md:py-12 border-t border-b border-[rgba(55,50,47,0.12)] flex justify-center items-center gap-6 ${showBackgroundPattern ? "relative z-10" : ""}`}>
-        <div className={`w-full max-w-[586px] px-6 py-5 md:py-8 overflow-hidden rounded-lg flex flex-col justify-start items-center gap-6 ${showBackgroundPattern ? "relative z-20" : ""}`}>
-          <div className="self-stretch flex flex-col justify-start items-start gap-3">
-            <h2 className="self-stretch text-center flex justify-center flex-col text-[#49423D] text-3xl md:text-5xl font-semibold leading-tight md:leading-[56px] font-sans tracking-tight">
+      <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16 lg:py-20 flex justify-center items-center">
+        <div className="w-full max-w-[1000px] flex flex-col justify-start items-center gap-6 sm:gap-8">
+          <div className="self-stretch flex flex-col justify-start items-center gap-4 sm:gap-6">
+            <h2 className="self-stretch text-center flex justify-center flex-col text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight md:leading-[60px] font-darker-grotesque tracking-tight">
               {title}
             </h2>
             {description && (
-              <div className="self-stretch text-center text-[#605A57] text-base leading-7 font-sans font-medium">
+              <div className="self-stretch text-center text-black text-base sm:text-lg font-bold leading-7 font-sans">
                 {description}
               </div>
             )}
           </div>
-          <div className="w-full max-w-[497px] flex flex-col justify-center items-center gap-12">
-            <div className="flex flex-col sm:flex-row justify-start items-center gap-4 w-full">
-              <CTAButton
-                text={primaryButton.text}
-                variant="primary"
+          <div className="w-full max-w-[600px] flex flex-col sm:flex-row justify-center items-center gap-4">
+            {primaryButton.href ? (
+              <a
                 href={primaryButton.href}
+                className="px-6 py-4 bg-black text-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-sm font-bold leading-5 font-sans transition-all duration-150 hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-2 active:translate-y-2 active:shadow-none"
+              >
+                {primaryButton.text}
+              </a>
+            ) : (
+              <button
                 onClick={primaryButton.onClick}
-                className="flex-1 sm:flex-none"
-              />
-              {secondaryButton && (
-                <CTAButton
-                  text={secondaryButton.text}
-                  variant="secondary"
-                  href={secondaryButton.href}
-                  onClick={secondaryButton.onClick}
-                  className="flex-1 sm:flex-none"
-                />
-              )}
-            </div>
+                className="px-6 py-4 bg-black text-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-sm font-bold leading-5 font-sans transition-all duration-150 hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-2 active:translate-y-2 active:shadow-none"
+              >
+                {primaryButton.text}
+              </button>
+            )}
+            {secondaryButton && (
+              <>
+                {secondaryButton.href ? (
+                  <a
+                    href={secondaryButton.href}
+                    className="px-6 py-4 bg-white text-black border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-sm font-bold leading-5 font-sans transition-all duration-150 hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-2 active:translate-y-2 active:shadow-none"
+                  >
+                    {secondaryButton.text}
+                  </a>
+                ) : (
+                  <button
+                    onClick={secondaryButton.onClick}
+                    className="px-6 py-4 bg-white text-black border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] text-sm font-bold leading-5 font-sans transition-all duration-150 hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-2 active:translate-y-2 active:shadow-none"
+                  >
+                    {secondaryButton.text}
+                  </button>
+                )}
+              </>
+            )}
           </div>
         </div>
       </div>

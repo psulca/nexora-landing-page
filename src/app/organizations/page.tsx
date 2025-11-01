@@ -32,17 +32,6 @@ export default function OrganizationsPage() {
           {/* Features Grid Section */}
           <div className="w-full border-b border-[rgba(55,50,47,0.12)] flex flex-col justify-center items-center mt-16 sm:mt-20 md:mt-24 lg:mt-32">
             <GridSection
-              badge={{
-                icon: (
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="1" y="1" width="4" height="4" stroke="#37322F" strokeWidth="1" fill="none" />
-                    <rect x="7" y="1" width="4" height="4" stroke="#37322F" strokeWidth="1" fill="none" />
-                    <rect x="1" y="7" width="4" height="4" stroke="#37322F" strokeWidth="1" fill="none" />
-                    <rect x="7" y="7" width="4" height="4" stroke="#37322F" strokeWidth="1" fill="none" />
-                  </svg>
-                ),
-                text: APP_TEXT.organizations.features.badge,
-              }}
               title={APP_TEXT.organizations.features.title}
               description={APP_TEXT.organizations.features.description}
               items={featuresItems}

@@ -59,58 +59,59 @@ export default function FAQSection() {
   }
 
   return (
-    <div className="w-full flex justify-center items-start">
-      <div className="flex-1 px-4 md:px-12 py-16 md:py-20 flex flex-col lg:flex-row justify-start items-start gap-6 lg:gap-12">
-        {/* Left Column - Header */}
-        <div className="w-full lg:flex-1 flex flex-col justify-center items-start gap-4 lg:py-5">
-          <div className="w-full flex flex-col justify-center text-[#49423D] font-semibold leading-tight md:leading-[44px] font-sans text-4xl tracking-tight">
-            Frequently Asked Questions
+    <div className="w-full bg-[#76A69D] border-t-4 border-b-4 border-black flex flex-col justify-center items-center">
+      {/* Header Section */}
+      <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 lg:py-10 flex justify-center items-center">
+        <div className="w-full max-w-[1000px] flex flex-col justify-start items-start gap-4 sm:gap-6">
+          <div className="w-full text-left flex justify-start flex-col text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight md:leading-[60px] font-darker-grotesque tracking-tight">
+            Preguntas Frecuentes
           </div>
-          <div className="w-full text-[#605A57] text-base font-normal leading-7 font-sans">
-            Explore your data, build your dashboard,
-            <br className="hidden md:block" />
-            bring your team together.
+          <div className="w-full text-left text-white/90 text-base sm:text-lg font-normal leading-7 font-sans">
+            Encuentra respuestas a las dudas más comunes sobre cómo usar Nexora.
           </div>
         </div>
+      </div>
 
-        {/* Right Column - FAQ Items */}
-        <div className="w-full lg:flex-1 flex flex-col justify-center items-center">
-          <div className="w-full flex flex-col">
-            {FAQ_DATA.map((item, index) => {
-              const isOpen = openItems.includes(index)
+      {/* FAQ Items Section */}
+      <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 lg:py-10 flex justify-center items-center">
+        <div className="w-full max-w-[1000px] flex flex-col gap-4">
+          {FAQ_DATA.map((item, index) => {
+            const isOpen = openItems.includes(index)
 
-              return (
-                <div key={index} className="w-full border-b border-[rgba(73,66,61,0.16)] overflow-hidden">
-                  <button
-                    onClick={() => toggleItem(index)}
-                    className="w-full px-5 py-[18px] flex justify-between items-center gap-5 text-left hover:bg-[rgba(73,66,61,0.02)] transition-colors duration-200"
-                    aria-expanded={isOpen}
-                  >
-                    <div className="flex-1 text-[#49423D] text-base font-medium leading-6 font-sans">
-                      {item.question}
-                    </div>
-                    <div className="flex justify-center items-center">
-                      <ChevronDownIcon
-                        className={`w-6 h-6 text-[rgba(73,66,61,0.60)] transition-transform duration-300 ease-in-out ${
-                          isOpen ? "rotate-180" : "rotate-0"
-                        }`}
-                      />
-                    </div>
-                  </button>
+            return (
+              <div
+                key={index}
+                className="w-full bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] overflow-hidden transition-all duration-200 hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+              >
+                <button
+                  onClick={() => toggleItem(index)}
+                  className="w-full px-4 sm:px-6 py-4 sm:py-5 flex justify-between items-center gap-4 text-left transition-all duration-200 active:translate-x-1 active:translate-y-1"
+                  aria-expanded={isOpen}
+                >
+                  <div className="flex-1 text-black text-base sm:text-lg font-bold leading-6 sm:leading-7 font-sans">
+                    {item.question}
+                  </div>
+                  <div className="flex justify-center items-center flex-shrink-0">
+                    <ChevronDownIcon
+                      className={`w-6 h-6 text-black transition-transform duration-300 ease-in-out ${
+                        isOpen ? "rotate-180" : "rotate-0"
+                      }`}
+                    />
+                  </div>
+                </button>
 
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                    }`}
-                  >
-                    <div className="px-5 pb-[18px] text-[#605A57] text-sm font-normal leading-6 font-sans">
-                      {item.answer}
-                    </div>
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <div className="px-4 sm:px-6 pb-4 sm:pb-5 text-black/70 text-sm sm:text-base font-medium leading-6 sm:leading-7 font-sans">
+                    {item.answer}
                   </div>
                 </div>
-              )
-            })}
-          </div>
+              </div>
+            )
+          })}
         </div>
       </div>
     </div>

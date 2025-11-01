@@ -1,23 +1,22 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Badge } from "@/components/ui/badge"
 import type { FeatureCard as FeatureCardType } from "@/types"
 
 const DOCUMENTATION_CARDS: FeatureCardType[] = [
     {
-      title: "Plan your schedules",
-      description: "Explore your data, build your dashboard,\nbring your team together.",
+      title: "Publica tu oportunidad",
+      description: "Crea convocatorias de voluntariado en minutos y destaca tus proyectos ante una comunidad comprometida.",
       image: "/modern-dashboard-interface-with-data-visualization.jpg",
     },
     {
-      title: "Data to insights in minutes",
-      description: "Transform raw data into actionable insights\nwith powerful analytics tools.",
+      title: "Gestiona postulaciones fácilmente",
+      description: "Revisa perfiles, recibe notificaciones y organiza a tus voluntarios desde un panel centralizado.",
       image: "/analytics-dashboard.png",
     },
     {
-      title: "Collaborate seamlessly",
-      description: "Work together in real-time with your team\nand share insights instantly.",
+      title: "Conecta y genera impacto",
+      description: "Impulsa tu misión con voluntarios comprometidos y lleva tu trabajo al siguiente nivel.",
       image: "/team-collaboration-interface-with-shared-workspace.jpg",
   },
 ]
@@ -41,32 +40,21 @@ export default function PlatformFeaturesSection() {
   }
 
   return (
-    <div className="w-full border-b border-[rgba(55,50,47,0.12)] flex flex-col justify-center items-center">
+    <div className="w-full bg-white border-t-4 border-b-4 border-black flex flex-col justify-center items-center">
       {/* Header Section */}
-      <div className="self-stretch px-6 md:px-24 py-12 md:py-16 border-b border-[rgba(55,50,47,0.12)] flex justify-center items-center gap-6">
-        <div className="w-full max-w-[586px] px-6 py-5 overflow-hidden rounded-lg flex flex-col justify-start items-center gap-4">
-          <Badge
-            icon={
-              <div className="w-[10.50px] h-[10.50px] outline-[1.17px] outline-[#37322F] outline-offset-[-0.58px] rounded-full"></div>
-            }
-            text="Platform Features"
-          />
-          <div className="self-stretch text-center flex justify-center flex-col text-[#49423D] text-3xl md:text-5xl font-semibold leading-tight md:leading-[60px] font-sans tracking-tight">
-            Streamline your business operations
-          </div>
-          <div className="self-stretch text-center text-[#605A57] text-base font-normal leading-7 font-sans">
-            Manage schedules, analyze data, and collaborate with your team
-            <br />
-            all in one powerful platform.
+      <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 lg:py-10 flex justify-center items-center">
+        <div className="w-full max-w-[1000px] flex flex-col justify-start items-center gap-4 sm:gap-6">
+          <div className="w-full text-center flex justify-center flex-col text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight md:leading-[60px] font-darker-grotesque tracking-tight">
+            Gestiona tus oportunidades de voluntariado
           </div>
         </div>
       </div>
 
       {/* Content Section */}
-      <div className="self-stretch px-4 md:px-9 overflow-hidden flex justify-start items-center">
-        <div className="flex-1 py-8 md:py-11 flex flex-col md:flex-row justify-start items-center gap-6 md:gap-12">
-          {/* Left Column - Feature Cards */}
-          <div className="w-full md:w-auto md:max-w-[400px] flex flex-col justify-center items-center gap-4 order-2 md:order-1">
+      <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 lg:py-10 overflow-hidden flex justify-center items-center">
+        <div className="w-full max-w-[1000px] py-4 md:py-6 flex flex-col md:flex-row justify-center items-start gap-6 md:gap-8">
+          {/* Feature Cards - Stacked vertically on all screen sizes, side-by-side with image on lg+ */}
+          <div className="w-full md:w-auto md:max-w-[400px] flex flex-col gap-4 order-2 md:order-1">
             {DOCUMENTATION_CARDS.map((card, index) => {
               const isActive = index === activeCard
 
@@ -74,25 +62,15 @@ export default function PlatformFeaturesSection() {
                 <div
                   key={index}
                   onClick={() => handleCardClick(index)}
-                  className={`w-full overflow-hidden flex flex-col justify-start items-start transition-all duration-300 cursor-pointer ${
-                    isActive
-                      ? "bg-white shadow-[0px_0px_0px_0.75px_#E0DEDB_inset]"
-                      : "border border-[rgba(2,6,23,0.08)]"
+                  className={`w-full border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] flex flex-col justify-start items-start transition-all duration-300 cursor-pointer hover:translate-x-1 hover:translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] ${
+                    isActive ? "bg-[#FFC942]" : "bg-white"
                   }`}
                 >
-                  <div
-                    className={`w-full h-0.5 bg-[rgba(50,45,43,0.08)] overflow-hidden ${isActive ? "opacity-100" : "opacity-0"}`}
-                  >
-                    <div
-                      key={animationKey}
-                      className="h-0.5 bg-[#322D2B] will-change-transform animate-[progressBar_5s_linear_forwards]"
-                    />
-                  </div>
                   <div className="px-6 py-5 w-full flex flex-col gap-2">
-                    <div className="self-stretch flex justify-center flex-col text-[#49423D] text-sm font-semibold leading-6 font-sans">
+                    <div className="self-stretch flex justify-start flex-col text-black text-sm font-bold leading-6 font-darker-grotesque">
                       {card.title}
                     </div>
-                    <div className="self-stretch text-[#605A57] text-[13px] font-normal leading-[22px] font-sans whitespace-pre-line">
+                    <div className="self-stretch text-black text-[13px] font-medium leading-[22px] font-sans whitespace-pre-line">
                       {card.description}
                     </div>
                   </div>
@@ -102,17 +80,20 @@ export default function PlatformFeaturesSection() {
           </div>
 
           {/* Right Column - Image */}
-          <div className="w-full md:w-auto rounded-lg flex flex-col justify-center items-center gap-2 order-1 md:order-2 md:px-0 px-[00]">
-            <div className="w-full md:w-[580px] h-[250px] md:h-[420px] bg-white shadow-[0px_0px_0px_0.9056603908538818px_rgba(0,0,0,0.08)] overflow-hidden rounded-lg flex flex-col justify-start items-start">
-              <div
-                className={`w-full h-full transition-all duration-300 ${
-                  activeCard === 0
-                    ? "bg-gradient-to-br from-blue-50 to-blue-100"
-                    : activeCard === 1
-                      ? "bg-gradient-to-br from-purple-50 to-purple-100"
-                      : "bg-gradient-to-br from-green-50 to-green-100"
-                }`}
-              />
+          <div className="w-full md:w-auto flex flex-col justify-center items-center gap-2 order-1 md:order-2">
+            <div className="w-full md:w-[580px] h-[250px] md:h-[420px] bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] overflow-hidden flex flex-col justify-start items-start relative">
+              {DOCUMENTATION_CARDS.map((card, index) => (
+                <img
+                  key={index}
+                  src={card.image}
+                  alt={card.title}
+                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out ${
+                    activeCard === index
+                      ? "opacity-100 scale-100"
+                      : "opacity-0 scale-95"
+                  }`}
+                />
+              ))}
             </div>
           </div>
         </div>

@@ -18,8 +18,8 @@ export const APP_TEXT = {
   brand: "Nexora",
   tagline: "Conectando voluntarios con causas",
   hero: {
-    title: "Conecta tu pasión\ncon causas que importan",
-    description: "Encuentra oportunidades de voluntariado cerca de ti\ny haz una diferencia en tu comunidad.",
+    title: "Conecta con causas que importan",
+    description: "Encuentra oportunidades de voluntariado cerca de ti y genera impacto real.",
     cta: "Explorar voluntariados",
     featureCards: [
       {
@@ -37,15 +37,15 @@ export const APP_TEXT = {
     ],
     dashboardImages: [
       {
-        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/dsadsadsa.jpg-xTHS4hGwCWp2H5bTj8np6DXZUyrxX7.jpeg",
+        src: "slide1.webp",
         alt: "Schedules Dashboard - Customer Subscription Management",
       },
       {
-        src: "/analytics-dashboard-with-charts-graphs-and-data-vi.jpg",
+        src: "slide2.webp",
         alt: "Analytics Dashboard",
       },
       {
-        src: "/data-visualization-dashboard-with-interactive-char.jpg",
+        src: "slide3.webp",
         alt: "Data Visualization Dashboard",
       },
     ],

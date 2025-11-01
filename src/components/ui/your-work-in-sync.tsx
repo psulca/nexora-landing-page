@@ -130,7 +130,7 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
                   whiteSpace: "nowrap",
                 }}
               >
-                Team updates flow seamlessly
+                Hola, vi su convocatoria sobre reforestación
               </span>
             </div>
           </div>
@@ -170,7 +170,7 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
                   whiteSpace: "nowrap",
                 }}
               >
-                Hi everyone
+                ¡Genial! Nos encantaría contar contigo 🙌
               </span>
             </div>
             {/* Avatar */}
@@ -237,7 +237,7 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
                   whiteSpace: "nowrap",
                 }}
               >
-                How about this instead?
+                ¿Necesitan ayuda este fin de semana?
               </span>
             </div>
           </div>
@@ -246,7 +246,7 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
           <div
             style={{
               position: "absolute",
-              left: "146px",
+              right: "0px",
               top: "180px",
               display: "flex",
               gap: "10px",
@@ -257,28 +257,27 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
             {/* Message bubble */}
             <div
               style={{
-                background: "#ffffff",
-                borderRadius: "16px",
+                background: theme === "light" ? "#37322f" : "var(--yws-bubble-dark)",
+                borderRadius: "999px",
                 padding: "0px 12px",
                 height: "36px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                boxShadow: "0px 0px 0px 1px rgba(0,0,0,0.08), 0px 1px 2px -0.4px rgba(0,0,0,0.08)",
-                overflow: "hidden",
               }}
             >
               <span
                 style={{
                   fontFamily: "Inter, sans-serif",
-                  fontWeight: 400,
-                  fontSize: "14px",
-                  lineHeight: "20px",
-                  color: "#030712",
+                  fontWeight: 500,
+                  fontSize: "13px",
+                  lineHeight: "16px",
+                  letterSpacing: "-0.4px",
+                  color: "#ffffff",
                   whiteSpace: "nowrap",
                 }}
               >
-                Great work, everyone!
+                Sí 💚 te enviamos los detalles.
               </span>
             </div>
             {/* Send button */}

@@ -1,20 +1,20 @@
-"use client"
+"use client";
 
-import { GridSection, type GridItem } from "./grid-section"
-import SmartSimpleBrilliant from "@/components/ui/smart-simple-brilliant"
-import YourWorkInSync from "@/components/ui/your-work-in-sync"
-import EffortlessIntegration from "@/components/ui/effortless-integration"
-import NumbersThatSpeak from "@/components/ui/numbers-that-speak"
-import { COLORS } from "@/lib/config"
+import { GridSection, type GridItem } from "./grid-section";
+import PublishOpportunities from "@/components/ui/publish-opportunities";
+import YourWorkInSync from "@/components/ui/your-work-in-sync";
+import ManageApplications from "@/components/ui/manage-applications";
+import BuildTrustVisibility from "@/components/ui/build-trust-visibility";
 
 export function BentoGridSection() {
   const gridItems: GridItem[] = [
     {
-      title: "Smart. Simple. Brilliant.",
-      description: "Your data is beautifully organized so you see everything clearly without the clutter.",
+      title: "Publica tus oportunidades fácilmente",
+      description:
+        "Crea y comparte convocatorias de voluntariado en minutos, clasificadas por causa, ubicación o habilidades.",
       image: (
-        <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg flex items-center justify-center overflow-hidden">
-          <SmartSimpleBrilliant
+        <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] flex items-center justify-center overflow-hidden">
+          <PublishOpportunities
             width="100%"
             height="100%"
             theme="light"
@@ -24,10 +24,25 @@ export function BentoGridSection() {
       ),
     },
     {
-      title: "Your work, in sync",
-      description: "Every update flows instantly across your team and keeps collaboration effortless and fast.",
+      title: "Gestiona postulaciones en un solo lugar",
+      description:
+        "Visualiza, organiza y da seguimiento a los voluntarios interesados desde un panel centralizado.",
       image: (
-        <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg flex overflow-hidden text-right items-center justify-center">
+        <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] flex overflow-hidden text-right items-center justify-center">
+          <ManageApplications
+            width="100%"
+            height="100%"
+            className="scale-50 sm:scale-65 md:scale-75 lg:scale-90 !important"
+          />
+        </div>
+      ),
+    },
+    {
+      title: "Conecta directamente con tu comunidad",
+      description:
+        "Comunícate con postulantes y recibe notificaciones automáticas para coordinar actividades o confirmar participaciones.",
+      image: (
+        <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg flex items-center justify-center overflow-hidden">
           <YourWorkInSync
             width="400"
             height="250"
@@ -38,11 +53,12 @@ export function BentoGridSection() {
       ),
     },
     {
-      title: "Effortless Integration",
-      description: "Connect your favorite tools and services seamlessly without breaking your workflow.",
+      title: "Genera confianza y visibilidad",
+      description:
+        "Tu perfil verificado permite mostrar tu misión, proyectos e impacto, reforzando la transparencia de tu organización.",
       image: (
         <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg flex items-center justify-center overflow-hidden">
-          <EffortlessIntegration
+          <BuildTrustVisibility
             width="100%"
             height="100%"
             className="scale-50 sm:scale-65 md:scale-75 lg:scale-90 !important"
@@ -50,39 +66,13 @@ export function BentoGridSection() {
         </div>
       ),
     },
-    {
-      title: "Numbers that speak",
-      description: "Track your progress with powerful analytics and insights that drive better decisions.",
-      image: (
-        <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg flex items-center justify-center overflow-hidden">
-          <NumbersThatSpeak
-            width="100%"
-            height="100%"
-            theme="light"
-            className="scale-50 sm:scale-65 md:scale-75 lg:scale-90 !important"
-          />
-        </div>
-      ),
-    },
-  ]
+  ];
 
   return (
     <GridSection
-      badge={{
-        icon: (
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="1" y="1" width="4" height="4" stroke={COLORS.primary} strokeWidth="1" fill="none" />
-            <rect x="7" y="1" width="4" height="4" stroke={COLORS.primary} strokeWidth="1" fill="none" />
-            <rect x="1" y="7" width="4" height="4" stroke={COLORS.primary} strokeWidth="1" fill="none" />
-            <rect x="7" y="7" width="4" height="4" stroke={COLORS.primary} strokeWidth="1" fill="none" />
-          </svg>
-        ),
-        text: "Bento grid",
-      }}
-      title="Built for absolute clarity and focused work"
-      description="Stay focused with tools that organize, connect and turn information into confident decisions."
+      title="Herramientas poderosas para tu organización"
+      description="Todo lo que necesitas para gestionar voluntarios y maximizar el impacto de tus proyectos."
       items={gridItems}
     />
-  )
+  );
 }
-
