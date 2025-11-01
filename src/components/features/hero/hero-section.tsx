@@ -39,7 +39,7 @@ export function HeroSection({
         </h1>
 
         {/* Description */}
-        <p className="w-full max-w-[600px] lg:w-[600px] text-center text-balance flex justify-center flex-col text-black text-base sm:text-lg md:text-xl leading-[1.4] sm:leading-[1.5] font-bold whitespace-pre-line font-sans drop-shadow-[2px_2px_0px_rgba(255,255,255,0.8)]">
+        <p className="w-full max-w-[600px] lg:w-[600px] text-center text-balance flex justify-center flex-col text-black text-base sm:text-lg md:text-xl leading-[1.4] sm:leading-[1.5] font-medium whitespace-pre-line font-sans drop-shadow-[2px_2px_0px_rgba(255,255,255,0.8)]">
           {finalDescription}
         </p>
 

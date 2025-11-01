@@ -58,14 +58,14 @@ export default function TestimonialsSection() {
   const currentTestimonial = TESTIMONIALS[activeTestimonial]
 
   return (
-    <div className="w-full bg-[#76A69D] border-t-4 border-b-4 border-black flex flex-col justify-center items-center">
+    <div className="w-full bg-[#76A69D] border-b-4 border-black flex flex-col justify-center items-center">
       {/* Header Section */}
       <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 lg:py-10 flex justify-center items-center">
         <div className="w-full max-w-[900px] flex flex-col justify-start items-center gap-4 sm:gap-6">
           <div className="w-full text-center flex justify-center flex-col text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight md:leading-[50px] font-darker-grotesque tracking-tight">
             Historias que inspiran
           </div>
-          <div className="w-full max-w-[700px] text-center text-white text-sm sm:text-base font-bold leading-6 sm:leading-7 font-sans">
+          <div className="w-full max-w-[700px] text-center text-white text-sm sm:text-base font-medium leading-6 sm:leading-7 font-sans">
             Descubre cómo voluntarios y organizaciones están
             <br className="hidden sm:block" />
             haciendo una diferencia real en sus comunidades.
@@ -121,7 +121,7 @@ export default function TestimonialsSection() {
               onClick={() =>
                 handleNavigationClick((activeTestimonial - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)
               }
-              className="w-12 h-12 border-4 border-black bg-[#FFC942] justify-center items-center gap-2 flex hover:bg-[#FFD966] active:translate-x-1 active:translate-y-1 active:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all duration-150"
+              className="w-12 h-12 border-4 border-black bg-[#F7D96C] justify-center items-center gap-2 flex hover:bg-[#FFD966] active:translate-x-1 active:translate-y-1 active:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all duration-150"
               style={{
                 boxShadow: "4px 4px 0px 0px rgba(0,0,0,1)",
               }}
@@ -140,7 +140,7 @@ export default function TestimonialsSection() {
             </button>
             <button
               onClick={() => handleNavigationClick((activeTestimonial + 1) % TESTIMONIALS.length)}
-              className="w-12 h-12 border-4 border-black bg-[#FFC942] justify-center items-center gap-2 flex hover:bg-[#FFD966] active:translate-x-1 active:translate-y-1 active:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all duration-150"
+              className="w-12 h-12 border-4 border-black bg-[#F7D96C] justify-center items-center gap-2 flex hover:bg-[#FFD966] active:translate-x-1 active:translate-y-1 active:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all duration-150"
               style={{
                 boxShadow: "4px 4px 0px 0px rgba(0,0,0,1)",
               }}

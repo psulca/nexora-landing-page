@@ -2,25 +2,20 @@ import { APP_TEXT } from "@/lib/config"
 
 export default function FooterSection() {
   return (
-    <div className="w-full bg-[#F97930] border-t-4 border-black flex flex-col justify-center items-center">
-      {/* Main Footer Content */}
+    <div className="w-full bg-[#F6A54A] border-t-4 border-black flex flex-col justify-center items-center">
       <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16 lg:py-20 flex justify-center items-center">
         <div className="w-full max-w-[1000px] flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12">
-          {/* Left Column - Brand */}
           <div className="flex flex-col justify-start items-start gap-4 sm:gap-6">
-            {/* Brand Section */}
             <div className="flex flex-col justify-start items-start gap-3">
               <div className="text-black text-xl sm:text-2xl font-black leading-tight font-darker-grotesque">
                 {APP_TEXT.brand}
               </div>
-              <div className="text-black text-sm sm:text-base font-bold leading-6 font-sans">
+              <div className="text-black text-sm sm:text-base font-medium leading-6 font-sans">
                 {APP_TEXT.tagline}
               </div>
             </div>
 
-            {/* Social Media Icons */}
             <div className="flex justify-start items-center gap-4">
-              {/* Twitter/X Icon */}
               <a
                 href="#"
                 className="w-8 h-8 bg-white border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center transition-all duration-150 hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1"
@@ -33,7 +28,6 @@ export default function FooterSection() {
                 </svg>
               </a>
 
-              {/* LinkedIn Icon */}
               <a
                 href="#"
                 className="w-8 h-8 bg-white border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center transition-all duration-150 hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1"
@@ -46,7 +40,6 @@ export default function FooterSection() {
                 </svg>
               </a>
 
-              {/* GitHub Icon */}
               <a
                 href="#"
                 className="w-8 h-8 bg-white border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center transition-all duration-150 hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1"
@@ -61,69 +54,65 @@ export default function FooterSection() {
             </div>
           </div>
 
-          {/* Right Column - Navigation Links */}
           <div className="flex flex-col sm:flex-row flex-wrap justify-start sm:justify-between items-start gap-6 md:gap-8 flex-1">
-            {/* Volunteer Column */}
             <div className="flex flex-col justify-start items-start gap-3 flex-1 min-w-[140px]">
               <div className="text-black text-sm font-black leading-5 font-sans uppercase tracking-wide">
                 Para Voluntarios
               </div>
               <div className="flex flex-col justify-start items-start gap-2">
-                <a href="#" className="text-black text-sm font-bold leading-5 font-sans cursor-pointer hover:underline transition-all">
+                <a href="#" className="text-black text-sm font-medium leading-5 font-sans cursor-pointer hover:underline transition-all">
                   Explorar oportunidades
                 </a>
-                <a href="#" className="text-black text-sm font-bold leading-5 font-sans cursor-pointer hover:underline transition-all">
+                <a href="#" className="text-black text-sm font-medium leading-5 font-sans cursor-pointer hover:underline transition-all">
                   Mi perfil
                 </a>
-                <a href="#" className="text-black text-sm font-bold leading-5 font-sans cursor-pointer hover:underline transition-all">
+                <a href="#" className="text-black text-sm font-medium leading-5 font-sans cursor-pointer hover:underline transition-all">
                   Mis aplicaciones
                 </a>
-                <a href="#" className="text-black text-sm font-bold leading-5 font-sans cursor-pointer hover:underline transition-all">
+                <a href="#" className="text-black text-sm font-medium leading-5 font-sans cursor-pointer hover:underline transition-all">
                   Favoritos
                 </a>
               </div>
             </div>
 
-            {/* Organization Column */}
             <div className="flex flex-col justify-start items-start gap-3 flex-1 min-w-[140px]">
               <div className="text-black text-sm font-black leading-5 font-sans uppercase tracking-wide">
                 Para Organizaciones
               </div>
               <div className="flex flex-col justify-start items-start gap-2">
-                <a href="#" className="text-black text-sm font-bold leading-5 font-sans cursor-pointer hover:underline transition-all">
+                <a href="#" className="text-black text-sm font-medium leading-5 font-sans cursor-pointer hover:underline transition-all">
                   Publicar oportunidad
                 </a>
-                <a href="#" className="text-black text-sm font-bold leading-5 font-sans cursor-pointer hover:underline transition-all">
+                <a href="#" className="text-black text-sm font-medium leading-5 font-sans cursor-pointer hover:underline transition-all">
                   Mi organización
                 </a>
-                <a href="#" className="text-black text-sm font-bold leading-5 font-sans cursor-pointer hover:underline transition-all">
+                <a href="#" className="text-black text-sm font-medium leading-5 font-sans cursor-pointer hover:underline transition-all">
                   Postulaciones
                 </a>
-                <a href="#" className="text-black text-sm font-bold leading-5 font-sans cursor-pointer hover:underline transition-all">
+                <a href="#" className="text-black text-sm font-medium leading-5 font-sans cursor-pointer hover:underline transition-all">
                   Reportes
                 </a>
               </div>
             </div>
 
-            {/* Resources Column */}
             <div className="flex flex-col justify-start items-start gap-3 flex-1 min-w-[140px]">
               <div className="text-black text-sm font-black leading-5 font-sans uppercase tracking-wide">
                 Recursos
               </div>
               <div className="flex flex-col justify-start items-start gap-2">
-                <a href="#" className="text-black text-sm font-bold leading-5 font-sans cursor-pointer hover:underline transition-all">
+                <a href="#" className="text-black text-sm font-medium leading-5 font-sans cursor-pointer hover:underline transition-all">
                   Términos de uso
                 </a>
-                <a href="#" className="text-black text-sm font-bold leading-5 font-sans cursor-pointer hover:underline transition-all">
+                <a href="#" className="text-black text-sm font-medium leading-5 font-sans cursor-pointer hover:underline transition-all">
                   Privacidad
                 </a>
-                <a href="#" className="text-black text-sm font-bold leading-5 font-sans cursor-pointer hover:underline transition-all">
+                <a href="#" className="text-black text-sm font-medium leading-5 font-sans cursor-pointer hover:underline transition-all">
                   Documentación
                 </a>
-                <a href="#" className="text-black text-sm font-bold leading-5 font-sans cursor-pointer hover:underline transition-all">
+                <a href="#" className="text-black text-sm font-medium leading-5 font-sans cursor-pointer hover:underline transition-all">
                   Comunidad
                 </a>
-                <a href="#" className="text-black text-sm font-bold leading-5 font-sans cursor-pointer hover:underline transition-all">
+                <a href="#" className="text-black text-sm font-medium leading-5 font-sans cursor-pointer hover:underline transition-all">
                   Soporte
                 </a>
               </div>
@@ -132,8 +121,7 @@ export default function FooterSection() {
         </div>
       </div>
 
-      {/* Bottom Section - Copyright */}
-      <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 border-t-4 border-black flex justify-center items-center">
+      <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 flex justify-center items-center">
         <div className="w-full max-w-[1000px] text-center text-black text-sm font-bold leading-5 font-sans">
           © {new Date().getFullYear()} Nexora. Todos los derechos reservados.
         </div>

@@ -59,7 +59,7 @@ export default function FAQSection() {
   }
 
   return (
-    <div className="w-full bg-[#76A69D] border-t-4 border-b-4 border-black flex flex-col justify-center items-center">
+    <div className="w-full bg-[#76A69D] border-b-4 border-black flex flex-col justify-center items-center">
       {/* Header Section */}
       <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 lg:py-10 flex justify-center items-center">
         <div className="w-full max-w-[1000px] flex flex-col justify-start items-start gap-4 sm:gap-6">

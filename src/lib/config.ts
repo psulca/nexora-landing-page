@@ -67,7 +67,7 @@ export const APP_TEXT = {
           {
             title: "Organizaciones",
             description: "Conecta con organizaciones y encuentra tu causa ideal",
-            url: "/organizations",
+            url: "#",
           },
         ],
       },
@@ -98,50 +98,6 @@ export const APP_TEXT = {
   auth: {
     login: "Ingresa",
     signup: "Regístrate",
-  },
-  organizations: {
-    hero: {
-      title: "Conecta con voluntarios\ncomprometidos",
-      description: "Comparte tus proyectos y encuentra voluntarios\napasionados por tu causa.",
-      cta: "Crear cuenta de organización",
-    },
-    features: {
-      badge: "Funcionalidades",
-      title: "Herramientas poderosas para tu organización",
-      description: "Todo lo que necesitas para gestionar voluntarios\ny maximizar el impacto de tus proyectos.",
-      items: [
-        {
-          title: "Publica oportunidades en minutos",
-          description: "Crea y publica oportunidades de voluntariado de forma rápida y sencilla.",
-          icon: "📝",
-        },
-        {
-          title: "Gestiona postulaciones fácilmente",
-          description: "Revisa, evalúa y selecciona voluntarios desde un panel centralizado.",
-          icon: "✓",
-        },
-        {
-          title: "Crea perfil institucional",
-          description: "Muestra tus proyectos y construye confianza con voluntarios potenciales.",
-          icon: "ℹ",
-        },
-        {
-          title: "Análisis y reportes",
-          description: "Obtén insights sobre el impacto de tus voluntarios y proyectos.",
-          icon: "📊",
-        },
-      ],
-    },
-    socialProof: {
-      stat: "+200 organizaciones",
-      description: "ya publican en nuestra plataforma",
-    },
-    cta: {
-      title: "¿Listo para encontrar voluntarios?",
-      primaryButton: "Crear cuenta",
-      secondaryButton: "Volver al inicio",
-      secondaryButtonHref: "/",
-    },
   },
 } as const
 

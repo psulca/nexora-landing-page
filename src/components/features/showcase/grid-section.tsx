@@ -18,20 +18,18 @@ interface GridSectionProps {
 
 export function GridSection({ title, description, items, className }: GridSectionProps) {
   return (
-    <div className={`w-full bg-[#F97930] border-t-4 border-b-4 border-black flex flex-col justify-center items-center ${className || ""}`}>
-      {/* Header Section */}
+    <div className={`w-full bg-[#F6A54A] border-b-4 border-black flex flex-col justify-center items-center ${className || ""}`}>
       <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 lg:py-10 flex justify-center items-center">
         <div className="w-full max-w-[1000px] flex flex-col justify-start items-center gap-4 sm:gap-6">
           <div className="w-full text-center flex justify-center flex-col text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight md:leading-[50px] font-darker-grotesque tracking-tight">
             {title}
           </div>
-          <div className="w-full max-w-[700px] text-center text-white text-sm sm:text-base font-bold leading-6 sm:leading-7 font-sans">
+          <div className="w-full max-w-[700px] text-center text-white text-sm sm:text-base font-medium leading-6 sm:leading-7 font-sans">
             {description}
           </div>
         </div>
       </div>
 
-      {/* Grid Content */}
       <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 lg:py-10 flex justify-center items-start">
         <div className="w-full max-w-[1000px] grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {items.map((item, index) => (
@@ -39,12 +37,10 @@ export function GridSection({ title, description, items, className }: GridSectio
               key={index}
               className="bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] p-4 sm:p-6 md:p-8 flex flex-col justify-start items-start gap-4 sm:gap-6"
             >
-              {/* Icon (for icon-based items, shown first) */}
               {item.icon && !item.image && (
                 <div className="text-4xl">{typeof item.icon === "string" ? item.icon : item.icon}</div>
               )}
 
-              {/* Content */}
               <div className="flex flex-col gap-2">
                 <h3 className="text-black text-lg sm:text-xl font-bold leading-tight font-darker-grotesque">
                   {item.title}
@@ -54,7 +50,6 @@ export function GridSection({ title, description, items, className }: GridSectio
                 </p>
               </div>
 
-              {/* Image (for image-based items, shown at bottom) */}
               {item.image && (
                 <div className="w-full mt-auto">
                   {item.image}

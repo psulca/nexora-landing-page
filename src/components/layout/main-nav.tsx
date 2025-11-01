@@ -59,7 +59,7 @@ export function MainNav({
     if (item.items) {
       return (
         <NavigationMenuItem key={item.title} className="text-black">
-          <NavigationMenuTrigger className="bg-transparent text-black font-bold text-sm hover:bg-white border-0 px-4 py-2">
+          <NavigationMenuTrigger className="bg-transparent text-black font-medium text-sm hover:bg-white border-0 px-4 py-2">
             {item.title}
           </NavigationMenuTrigger>
           <NavigationMenuContent>

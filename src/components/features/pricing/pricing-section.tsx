@@ -125,7 +125,7 @@ export default function PricingSection() {
   const currentPlans = organizationType === "ong" ? ongPlans : corporatePlans;
 
   return (
-    <div className="w-full bg-[#FFF9E9] border-t-4 border-b-4 border-black flex flex-col justify-center items-center">
+    <div className="w-full bg-[#FFF9E9] border-b-4 border-black flex flex-col justify-center items-center">
       {/* Header Section */}
       <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 lg:py-10 flex justify-center items-center">
         <div className="w-full max-w-[1000px] flex flex-col justify-start items-center gap-4 sm:gap-6">
@@ -142,7 +142,7 @@ export default function PricingSection() {
           <div className="relative flex border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] bg-white">
             {/* Indicador activo amarillo */}
             <div
-              className={`absolute top-0 left-0 h-full bg-[#FFC942] border-2 border-black transition-all duration-300 ease-in-out ${
+              className={`absolute top-0 left-0 h-full bg-[#F7D96C] border-2 border-black transition-all duration-300 ease-in-out ${
                 organizationType === "ong" ? "w-1/2" : "w-1/2 translate-x-full"
               }`}
               style={{
@@ -201,7 +201,7 @@ export default function PricingSection() {
                   key={plan.name}
                   className={`flex-1 border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] flex flex-col justify-start items-start gap-6 p-6 md:p-8 ${
                     isProfessional
-                      ? "bg-[#F97930] border-black"
+                      ? "bg-[#F6A54A] border-black"
                       : "bg-white"
                   }`}
                 >
@@ -286,7 +286,7 @@ export default function PricingSection() {
                     <button
                       className={`self-stretch px-4 py-3 border-4 border-black flex justify-center items-center transition-all duration-150 hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] ${
                         isProfessional 
-                          ? "bg-[#FFC942] text-black" 
+                          ? "bg-[#F7D96C] text-black" 
                           : "bg-black text-white"
                       }`}
                       style={{
