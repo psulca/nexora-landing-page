@@ -23,7 +23,7 @@ export function HeroSection({
       {/* Hero Image - Full Height */}
       <div className="absolute inset-0 w-full h-full -z-10">
         <Image
-          src="/new-hero2.webp"
+          src="/hero.webp"
           alt="Hero image"
           fill
           className="object-cover object-bottom"

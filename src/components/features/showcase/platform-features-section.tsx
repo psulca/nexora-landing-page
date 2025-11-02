@@ -34,7 +34,7 @@ export default function PlatformFeaturesSection({
   autoPlay = true,
   autoPlayInterval = 5000,
   showImage = true,
-  imageContainerClassName = "w-full md:w-[580px] h-[250px] md:h-[420px]",
+  imageContainerClassName = "w-full md:w-[580px] aspect-video",
   dashboardImages,
   showDashboardPreview = false,
 }: PlatformFeaturesSectionProps) {
@@ -123,9 +123,9 @@ export default function PlatformFeaturesSection({
 
       {/* Content Section */}
       <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 lg:py-10 overflow-hidden flex justify-center items-center">
-        <div className="w-full max-w-[1000px] py-4 md:py-6 flex flex-col md:flex-row justify-center items-start gap-6 md:gap-8">
+        <div className="w-full max-w-[1000px] py-4 md:py-6 flex flex-col lg:flex-row justify-center items-start lg:items-center gap-6 lg:gap-8">
           {/* Feature Cards - Stacked vertically on all screen sizes, side-by-side with image on lg+ */}
-          <div className="w-full md:w-auto md:max-w-[400px] flex flex-col gap-4 order-2 md:order-1">
+          <div className="w-full lg:w-auto lg:max-w-[400px] flex flex-col gap-4 order-2 lg:order-1">
             {cards.map((card, index) => {
               const isActive = index === activeCard
 
@@ -160,7 +160,7 @@ export default function PlatformFeaturesSection({
 
           {/* Right Column - Image */}
           {showImage && cards.some((card) => card.image) && (
-            <div className="w-full md:w-auto flex flex-col justify-center items-center gap-2 order-1 md:order-2">
+            <div className="w-full lg:w-auto flex flex-col justify-center items-center gap-2 order-1 lg:order-2">
               <div className={`${imageContainerClassName} bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] overflow-hidden flex flex-col justify-start items-start relative`}>
                 {cards.map((card, index) => {
                   if (!card.image) return null
@@ -169,7 +169,7 @@ export default function PlatformFeaturesSection({
                       key={index}
                       src={card.image}
                       alt={card.title}
-                      className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out ${
+                      className={`absolute inset-0 w-full h-full object-contain transition-all duration-500 ease-in-out ${
                         activeCard === index
                           ? "opacity-100 scale-100"
                           : "opacity-0 scale-95"

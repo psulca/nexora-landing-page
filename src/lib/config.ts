@@ -37,15 +37,15 @@ export const APP_TEXT = {
     ],
     dashboardImages: [
       {
-        src: "slide1.webp",
+        src: "how-works-slide1.webp",
         alt: "Schedules Dashboard - Customer Subscription Management",
       },
       {
-        src: "slide2.webp",
+        src: "how-works-slide2.webp",
         alt: "Analytics Dashboard",
       },
       {
-        src: "slide3.webp",
+        src: "how-works-slide3.webp",
         alt: "Data Visualization Dashboard",
       },
     ],

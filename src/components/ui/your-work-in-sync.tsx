@@ -47,9 +47,9 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
         } as React.CSSProperties)
 
   // Figma-exported assets
-  const imgFrame2147223205 = "/professional-woman-avatar-with-short-brown-hair-an.jpg"
-  const imgFrame2147223206 = "/professional-man-avatar-with-beard-and-glasses-loo.jpg"
-  const imgFrame2147223207 = "/professional-person-avatar-with-curly-hair-and-war.jpg"
+  const imgFrame2147223205 = "/placeholder.svg"
+  const imgFrame2147223206 = "/placeholder.svg"
+  const imgFrame2147223207 = "/placeholder.svg"
   const imgArrowUp =
     "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='3' strokeLinecap='round' strokeLinejoin='round'%3E%3Cpath d='m5 12 7-7 7 7'/%3E%3Cpath d='M12 19V5'/%3E%3C/svg%3E"
 
