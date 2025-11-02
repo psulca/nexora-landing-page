@@ -138,7 +138,7 @@ export default function PlatformFeaturesSection({
                   }`}
                 >
                   <div className="px-6 py-5 w-full flex flex-col gap-2">
-                    <div className="self-stretch flex justify-start flex-col text-black text-sm font-bold leading-6 font-darker-grotesque">
+                    <div className="self-stretch flex justify-start flex-col text-black text-xl font-bold leading-6 font-darker-grotesque">
                       {card.title}
                     </div>
                     <div className="self-stretch text-black text-[13px] font-medium leading-[22px] font-sans whitespace-pre-line">

@@ -42,10 +42,10 @@ export function GridSection({ title, description, items, className }: GridSectio
               )}
 
               <div className="flex flex-col gap-2">
-                <h3 className="text-black text-lg sm:text-xl font-bold leading-tight font-darker-grotesque">
+                <h3 className="text-black text-lg sm:text-2xl font-bold leading-tight font-darker-grotesque">
                   {item.title}
                 </h3>
-                <p className="text-black text-sm md:text-base font-medium leading-relaxed font-sans">
+                <p className="text-black text-sm md:text-base font-medium leading-relaxed font-sans opacity-80">
                   {item.description}
                 </p>
               </div>
