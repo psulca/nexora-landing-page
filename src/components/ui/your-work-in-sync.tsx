@@ -13,38 +13,36 @@ interface YourWorkInSyncProps {
 
 /**
  * Your work, in sync – Chat conversation UI
- * Generated from Figma via MCP with exact measurements (482×300px)
+ * Neobrutalist style following the design system
  * Single-file component following the v0-ready pattern used in this repo.
  */
 const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
   width = 482,
   height = 300,
   className = "",
-  theme = "dark",
+  theme = "light",
 }) => {
-  // Design tokens (derived from Figma local variables)
-  const themeVars =
-    theme === "light"
-      ? {
-          "--yws-surface": "#ffffff",
-          "--yws-text-primary": "#37322f",
-          "--yws-text-secondary": "#6b7280",
-          "--yws-bubble-light": "#e8e5e3",
-          "--yws-bubble-dark": "#37322f",
-          "--yws-bubble-white": "#ffffff",
-          "--yws-border": "rgba(0,0,0,0.08)",
-          "--yws-shadow": "rgba(0,0,0,0.08)",
-        }
-      : ({
-          "--yws-surface": "#1f2937",
-          "--yws-text-primary": "#f9fafb",
-          "--yws-text-secondary": "#d1d5db",
-          "--yws-bubble-light": "#374151",
-          "--yws-bubble-dark": "#111827",
-          "--yws-bubble-white": "#ffffff",
-          "--yws-border": "rgba(255,255,255,0.12)",
-          "--yws-shadow": "rgba(0,0,0,0.24)",
-        } as React.CSSProperties)
+  // Neobrutalist color palette from design system
+  const colors = {
+    light: {
+      surface: "#ffffff",
+      textPrimary: "#000000",
+      textSecondary: "#6b7280",
+      bubbleLight: "#F7D96C", // Light yellow from design system
+      bubbleDark: "#000000", // Black for dark bubbles
+      border: "#000000",
+    },
+    dark: {
+      surface: "#1f2937",
+      textPrimary: "#f9fafb",
+      textSecondary: "#d1d5db",
+      bubbleLight: "#374151",
+      bubbleDark: "#111827",
+      border: "#000000",
+    },
+  }
+
+  const themeColors = colors[theme]
 
   // Figma-exported assets
   const imgFrame2147223205 = "/placeholder.svg"
@@ -62,7 +60,6 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
           height,
           position: "relative",
           background: "transparent",
-          ...themeVars,
         } as React.CSSProperties
       }
       role="img"
@@ -96,22 +93,20 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
           >
             {/* Avatar */}
             <div
+              className="bg-white border-2 border-black flex-shrink-0"
               style={{
                 width: "36px",
                 height: "36px",
-                borderRadius: "44px",
                 backgroundImage: `url('${imgFrame2147223205}')`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                border: "1px solid var(--yws-border)",
-                flexShrink: 0,
               }}
             />
             {/* Message bubble */}
             <div
+              className="border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
               style={{
-                background: theme === "light" ? "#e8e5e3" : "var(--yws-bubble-light)",
-                borderRadius: "999px",
+                background: themeColors.bubbleLight,
                 padding: "0px 12px",
                 height: "36px",
                 display: "flex",
@@ -120,14 +115,13 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
               }}
             >
               <span
+                className="font-medium whitespace-nowrap"
                 style={{
                   fontFamily: "Inter, sans-serif",
-                  fontWeight: 500,
                   fontSize: "13px",
                   lineHeight: "16px",
                   letterSpacing: "-0.4px",
-                  color: theme === "light" ? "#37322f" : "var(--yws-text-primary)",
-                  whiteSpace: "nowrap",
+                  color: themeColors.textPrimary,
                 }}
               >
                 Hola, vi su convocatoria sobre reforestación
@@ -149,9 +143,9 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
           >
             {/* Message bubble */}
             <div
+              className="border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
               style={{
-                background: theme === "light" ? "#37322f" : "var(--yws-bubble-dark)",
-                borderRadius: "999px",
+                background: themeColors.bubbleDark,
                 padding: "0px 12px",
                 height: "36px",
                 display: "flex",
@@ -160,14 +154,12 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
               }}
             >
               <span
+                className="text-white font-medium whitespace-nowrap"
                 style={{
                   fontFamily: "Inter, sans-serif",
-                  fontWeight: 500,
                   fontSize: "13px",
                   lineHeight: "16px",
                   letterSpacing: "-0.4px",
-                  color: "#ffffff",
-                  whiteSpace: "nowrap",
                 }}
               >
                 ¡Genial! Nos encantaría contar contigo 🙌
@@ -175,15 +167,13 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
             </div>
             {/* Avatar */}
             <div
+              className="bg-white border-2 border-black flex-shrink-0"
               style={{
                 width: "36px",
                 height: "36px",
-                borderRadius: "44px",
                 backgroundImage: `url('${imgFrame2147223206}')`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                border: "1px solid var(--yws-border)",
-                flexShrink: 0,
               }}
             />
           </div>
@@ -203,22 +193,20 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
           >
             {/* Avatar */}
             <div
+              className="bg-white border-2 border-black flex-shrink-0"
               style={{
                 width: "36px",
                 height: "36px",
-                borderRadius: "44px",
                 backgroundImage: `url('${imgFrame2147223207}')`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
-                border: "1px solid var(--yws-border)",
-                flexShrink: 0,
               }}
             />
             {/* Message bubble */}
             <div
+              className="border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
               style={{
-                background: theme === "light" ? "#e8e5e3" : "var(--yws-bubble-light)",
-                borderRadius: "999px",
+                background: themeColors.bubbleLight,
                 padding: "0px 12px",
                 height: "36px",
                 display: "flex",
@@ -227,14 +215,13 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
               }}
             >
               <span
+                className="font-medium whitespace-nowrap"
                 style={{
                   fontFamily: "Inter, sans-serif",
-                  fontWeight: 500,
                   fontSize: "13px",
                   lineHeight: "16px",
                   letterSpacing: "-0.4px",
-                  color: theme === "light" ? "#37322f" : "var(--yws-text-primary)",
-                  whiteSpace: "nowrap",
+                  color: themeColors.textPrimary,
                 }}
               >
                 ¿Necesitan ayuda este fin de semana?
@@ -256,9 +243,9 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
           >
             {/* Message bubble */}
             <div
+              className="border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
               style={{
-                background: theme === "light" ? "#37322f" : "var(--yws-bubble-dark)",
-                borderRadius: "999px",
+                background: themeColors.bubbleDark,
                 padding: "0px 12px",
                 height: "36px",
                 display: "flex",
@@ -267,14 +254,12 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
               }}
             >
               <span
+                className="text-white font-medium whitespace-nowrap"
                 style={{
                   fontFamily: "Inter, sans-serif",
-                  fontWeight: 500,
                   fontSize: "13px",
                   lineHeight: "16px",
                   letterSpacing: "-0.4px",
-                  color: "#ffffff",
-                  whiteSpace: "nowrap",
                 }}
               >
                 Sí 💚 te enviamos los detalles.
@@ -282,26 +267,20 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
             </div>
             {/* Send button */}
             <div
+              className="border-2 border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center flex-shrink-0 cursor-pointer transition-all duration-150 hover:translate-x-1 hover:translate-y-1 hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"
               style={{
                 width: "36px",
                 height: "36px",
-                borderRadius: "44px",
-                background: theme === "light" ? "#37322f" : "var(--yws-bubble-dark)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                boxShadow: "0px 1px 2px 0px rgba(0,0,0,0.08)",
-                cursor: "pointer",
-                flexShrink: 0,
+                background: themeColors.bubbleDark,
               }}
             >
               <img
                 src={imgArrowUp || "/placeholder.svg"}
                 alt="Send"
+                className="brightness-0 invert"
                 style={{
                   width: "20px",
                   height: "20px",
-                  filter: "brightness(0) invert(1)",
                 }}
               />
             </div>

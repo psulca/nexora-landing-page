@@ -31,18 +31,18 @@ export function OpportunityCard({ data, className = "" }: OpportunityCardProps) 
 
   return (
     <div
-      className={className}
+      className={`${className} shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]`}
       style={{
         width: "100%",
-        borderRadius: "4px",
         overflow: "hidden",
         background: data.color.background,
         display: "flex",
         marginTop: isFirst ? "0px" : "3px",
+        border: "0.5px solid #000000",
       }}
     >
-      {/* Left border */}
-      <div style={{ width: "2.25px", background: data.color.border, flexShrink: 0 }} />
+      {/* Left border accent */}
+      <div style={{ width: "1px", background: data.color.border, flexShrink: 0 }} />
 
       {/* Content */}
       <div style={{ padding: "4.5px", width: "100%", display: "flex", flexDirection: "column", gap: "2px" }}>
@@ -56,7 +56,6 @@ export function OpportunityCard({ data, className = "" }: OpportunityCardProps) 
               color: data.color.categoryText,
             }}
           >
-            {data.categoryIcon && `${data.categoryIcon} `}
             {data.category}
           </span>
         </div>
@@ -86,7 +85,7 @@ export function OpportunityCard({ data, className = "" }: OpportunityCardProps) 
               marginTop: "2px",
             }}
           >
-            📍 {data.location}
+            {data.location}
           </div>
         )}
 

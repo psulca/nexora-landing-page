@@ -1,18 +1,3 @@
-// Constantes de colores
-export const COLORS = {
-  primary: "#37322F",
-  primaryDark: "#2A2520",
-  primaryLight: "rgba(55, 50, 47, 0.05)",
-  background: "#F7F5F3",
-  textPrimary: "#37322F",
-  textSecondary: "#49423D",
-  textTertiary: "#605A57",
-  textMuted: "rgba(73, 66, 61, 0.50)",
-  border: "rgba(55, 50, 47, 0.12)",
-  borderLight: "rgba(55, 50, 47, 0.06)",
-  white: "#FFFFFF",
-} as const
-
 // Constantes de textos de la aplicación
 export const APP_TEXT = {
   brand: "Nexora",
@@ -37,15 +22,15 @@ export const APP_TEXT = {
     ],
     dashboardImages: [
       {
-        src: "how-works-slide1.webp",
+        src: "slide1.png",
         alt: "Schedules Dashboard - Customer Subscription Management",
       },
       {
-        src: "how-works-slide2.webp",
+        src: "slide2.png",
         alt: "Analytics Dashboard",
       },
       {
-        src: "how-works-slide3.webp",
+        src: "slide3.png",
         alt: "Data Visualization Dashboard",
       },
     ],

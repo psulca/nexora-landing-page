@@ -42,7 +42,7 @@ export function BentoGridSection() {
       description:
         "Comunícate con postulantes y recibe notificaciones automáticas para coordinar actividades o confirmar participaciones.",
       image: (
-        <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] rounded-lg flex items-center justify-center overflow-hidden">
+        <div className="w-full h-[200px] sm:h-[250px] md:h-[300px] flex items-center justify-center overflow-hidden">
           <YourWorkInSync
             width="400"
             height="250"

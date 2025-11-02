@@ -26,17 +26,17 @@ export default function LandingPage() {
     {
       title: "Publica tu oportunidad",
       description: "Crea convocatorias de voluntariado en minutos y destaca tus proyectos ante una comunidad comprometida.",
-      image: "/modern-dashboard-interface-with-data-visualization.jpg",
+      image: "/slide4.png",
     },
     {
       title: "Gestiona postulaciones fácilmente",
       description: "Revisa perfiles, recibe notificaciones y organiza a tus voluntarios desde un panel centralizado.",
-      image: "/analytics-dashboard.png",
+      image: "/slide5.png",
     },
     {
       title: "Conecta y genera impacto",
       description: "Impulsa tu misión con voluntarios comprometidos y lleva tu trabajo al siguiente nivel.",
-      image: "/team-collaboration-interface-with-shared-workspace.jpg",
+      image: "/slide6.png",
     },
   ]
 

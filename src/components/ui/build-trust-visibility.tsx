@@ -32,11 +32,8 @@ const BuildTrustVisibility: React.FC<BuildTrustVisibilityProps> = ({ width = 482
         }}
       >
         <div
-          className="w-[280px] h-[180px] sm:w-[360px] sm:h-[240px]"
+          className="w-[280px] h-[180px] sm:w-[360px] sm:h-[240px] border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] bg-white"
           style={{
-            background: "#ffffff",
-            borderRadius: "12px",
-            boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.08), 0px 0px 0px 1px rgba(0, 0, 0, 0.06)",
             display: "flex",
             flexDirection: "column",
             padding: "clamp(12px, 2vw, 20px)",
@@ -62,18 +59,11 @@ const BuildTrustVisibility: React.FC<BuildTrustVisibilityProps> = ({ width = 482
             }}
           >
             <div
-              className="w-10 h-10 sm:w-12 sm:h-12"
+              className="w-10 h-10 sm:w-12 sm:h-12 border-2 border-black shadow-[1.5px_1.5px_0px_0px_rgba(0,0,0,1)] bg-[#37322F] text-white flex items-center justify-center flex-shrink-0"
               style={{
-                background: "#37322F",
-                borderRadius: "8px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "#ffffff",
                 fontFamily: "Inter, sans-serif",
                 fontWeight: 600,
                 fontSize: "clamp(14px, 2vw, 18px)",
-                flexShrink: 0,
               }}
             >
               ONG
@@ -111,15 +101,7 @@ const BuildTrustVisibility: React.FC<BuildTrustVisibilityProps> = ({ width = 482
                   Fundación Verde
                 </span>
                 <div
-                  className="w-3.5 h-3.5 sm:w-4 sm:h-4"
-                  style={{
-                    background: "#10B981",
-                    borderRadius: "50%",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    flexShrink: 0,
-                  }}
+                  className="w-3.5 h-3.5 sm:w-4 sm:h-4 border border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] bg-[#76A69D] flex items-center justify-center flex-shrink-0"
                 >
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -298,18 +280,12 @@ const BuildTrustVisibility: React.FC<BuildTrustVisibilityProps> = ({ width = 482
         </div>
 
         <div
+          className="mt-auto border-2 border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] flex items-center gap-2 px-3 py-2 min-w-0 overflow-hidden"
           style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "8px",
-            padding: "8px 12px",
-            background: "rgba(16, 185, 129, 0.08)",
-            borderRadius: "6px",
-            border: "1px solid rgba(16, 185, 129, 0.2)",
+            background: "#F7D96C",
             minWidth: 0,
             overflow: "hidden",
           }}
-          className="mt-auto"
         >
           <svg
             width="14"
@@ -321,14 +297,14 @@ const BuildTrustVisibility: React.FC<BuildTrustVisibilityProps> = ({ width = 482
           >
             <path
               d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-              stroke="#10B981"
+              stroke="#76A69D"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
             <path
               d="M12 16V12M12 8H12.01"
-              stroke="#10B981"
+              stroke="#76A69D"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -339,7 +315,7 @@ const BuildTrustVisibility: React.FC<BuildTrustVisibilityProps> = ({ width = 482
               fontFamily: "Inter, sans-serif",
               fontWeight: 500,
               fontSize: "11px",
-              color: "#065F46",
+              color: "#000000",
               lineHeight: "1.3",
               overflow: "hidden",
               textOverflow: "ellipsis",
@@ -354,21 +330,17 @@ const BuildTrustVisibility: React.FC<BuildTrustVisibilityProps> = ({ width = 482
         
         {/* Small project cards in background for depth */}
         <div
+          className="hidden sm:block border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] bg-white"
           style={{
             position: "absolute",
             left: "20px",
             top: "20px",
             width: "120px",
             height: "80px",
-            background: "#ffffff",
-            borderRadius: "8px",
-            boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.06)",
-            border: "1px solid rgba(0, 0, 0, 0.06)",
             opacity: 0.6,
             transform: "rotate(-4deg)",
             zIndex: -1,
           }}
-          className="hidden sm:block"
         >
           <div
             style={{
@@ -379,12 +351,7 @@ const BuildTrustVisibility: React.FC<BuildTrustVisibilityProps> = ({ width = 482
             }}
           >
             <div
-              style={{
-                width: "100%",
-                height: "4px",
-                background: "#10B981",
-                borderRadius: "2px",
-              }}
+              className="w-full h-1 bg-[#76A69D]"
             />
             <div
               style={{
@@ -400,21 +367,17 @@ const BuildTrustVisibility: React.FC<BuildTrustVisibilityProps> = ({ width = 482
         </div>
 
         <div
+          className="hidden sm:block border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] bg-white"
           style={{
             position: "absolute",
             right: "20px",
             bottom: "20px",
             width: "100px",
             height: "70px",
-            background: "#ffffff",
-            borderRadius: "8px",
-            boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.06)",
-            border: "1px solid rgba(0, 0, 0, 0.06)",
             opacity: 0.5,
             transform: "rotate(3deg)",
             zIndex: -1,
           }}
-          className="hidden sm:block"
         >
           <div
             style={{
@@ -425,12 +388,7 @@ const BuildTrustVisibility: React.FC<BuildTrustVisibilityProps> = ({ width = 482
             }}
           >
             <div
-              style={{
-                width: "100%",
-                height: "3px",
-                background: "#0EA5E9",
-                borderRadius: "2px",
-              }}
+              className="w-full h-1 bg-[#0EA5E9]"
             />
             <div
               style={{
