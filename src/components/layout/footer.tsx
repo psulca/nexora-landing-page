@@ -2,7 +2,7 @@ import { APP_TEXT } from "@/lib/config"
 
 export default function FooterSection() {
   return (
-    <div className="w-full bg-[#F6A54A] border-t-4 border-black flex flex-col justify-center items-center">
+    <div className="w-full bg-[#FFF9E9] border-t-4 border-black flex flex-col justify-center items-center">
       <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16 lg:py-20 flex justify-center items-center">
         <div className="w-full max-w-[1000px] flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12">
           <div className="flex flex-col justify-start items-start gap-4 sm:gap-6">

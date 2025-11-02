@@ -3,36 +3,20 @@ import { VolunteerAvatar } from "./volunteer-avatar"
 import { DashboardPanel } from "./dashboard-panel"
 
 export interface VolunteerPosition {
-  /** Angle in radians for position on ring */
   angle: number
-  /** Radius from center */
   radius: number
 }
 
 interface ManageApplicationsProps {
-  /** Fixed width from Figma: 482px */
   width?: number | string
-  /** Fixed height from Figma: 300px */
   height?: number | string
-  /** Optional className to pass to root */
   className?: string
-  /** Center X position (default: 250) */
   centerX?: number
-  /** Center Y position (default: 179) */
   centerY?: number
-  /** Custom volunteer positions (if not provided, uses default positions) */
   volunteerPositions?: readonly VolunteerPosition[]
-  /** Size of volunteer avatars (default: 40) */
   volunteerSize?: number
-  /** Size of dashboard panel (default: 64) */
   panelSize?: number
 }
-
-/**
- * Manage Applications – Volunteer management panel visualization
- * Shows volunteers (people silhouettes) around a central dashboard panel
- * Generic and reusable component
- */
 const ManageApplications: React.FC<ManageApplicationsProps> = ({
   width = 482,
   height = 300,
@@ -48,15 +32,14 @@ const ManageApplications: React.FC<ManageApplicationsProps> = ({
     y: centerY + ringRadius * Math.sin(angle),
   })
 
-  // Default volunteer positions if not provided
   const defaultPositions: readonly VolunteerPosition[] = [
-    { radius: 80, angle: Math.PI }, // Inner ring left
-    { radius: 80, angle: 0 }, // Inner ring right
-    { radius: 120, angle: -Math.PI / 4 }, // Middle ring top-right
-    { radius: 120, angle: (3 * Math.PI) / 4 }, // Middle ring bottom-left
-    { radius: 120, angle: (5 * Math.PI) / 4 }, // Middle ring bottom-left diagonal
-    { radius: 160, angle: Math.PI }, // Outer ring left
-    { radius: 160, angle: 0 }, // Outer ring right
+    { radius: 80, angle: Math.PI },
+    { radius: 80, angle: 0 },
+    { radius: 120, angle: -Math.PI / 4 },
+    { radius: 120, angle: (3 * Math.PI) / 4 },
+    { radius: 120, angle: (5 * Math.PI) / 4 },
+    { radius: 160, angle: Math.PI },
+    { radius: 160, angle: 0 },
   ]
 
   const positions = volunteerPositions || defaultPositions
@@ -87,14 +70,12 @@ const ManageApplications: React.FC<ManageApplicationsProps> = ({
         }}
       />
 
-      {/* Calculate max radius and ring radii */}
       {(() => {
         const maxRadius = Math.max(...positions.map((p) => p.radius), 160)
         const ringRadii = Array.from(new Set(positions.map((p) => p.radius))).sort((a, b) => a - b)
         
         return (
           <>
-            {/* Render rings based on volunteer positions */}
             {ringRadii.map((radius: number, index: number) => (
               <div
                 key={radius}
@@ -115,7 +96,6 @@ const ManageApplications: React.FC<ManageApplicationsProps> = ({
         )
       })()}
 
-      {/* Volunteers and central panel */}
       <div
         style={{
           width: "500px",
@@ -126,16 +106,13 @@ const ManageApplications: React.FC<ManageApplicationsProps> = ({
           position: "absolute",
         }}
       >
-        {/* Central dashboard panel */}
         <DashboardPanel x={centerX} y={centerY} size={panelSize} />
 
-        {/* Render volunteers at specified positions */}
         {positions.map((position, index) => {
           const pos = getPositionOnRing(position.radius, position.angle)
           return <VolunteerAvatar key={index} x={pos.x} y={pos.y} size={volunteerSize} />
         })}
 
-        {/* Connection lines from panel to volunteers */}
         <svg
           style={{
             position: "absolute",

@@ -18,13 +18,13 @@ interface GridSectionProps {
 
 export function GridSection({ title, description, items, className }: GridSectionProps) {
   return (
-    <div className={`w-full bg-[#F6A54A] border-b-4 border-black flex flex-col justify-center items-center ${className || ""}`}>
+    <div className={`w-full bg-[#FFF9E9] border-b-4 border-black flex flex-col justify-center items-center ${className || ""}`}>
       <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 lg:py-10 flex justify-center items-center">
         <div className="w-full max-w-[1000px] flex flex-col justify-start items-center gap-4 sm:gap-6">
-          <div className="w-full text-center flex justify-center flex-col text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight md:leading-[50px] font-darker-grotesque tracking-tight">
+          <div className="w-full text-center flex justify-center flex-col text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight md:leading-[50px] font-darker-grotesque tracking-tight">
             {title}
           </div>
-          <div className="w-full max-w-[700px] text-center text-white text-sm sm:text-base font-medium leading-6 sm:leading-7 font-sans">
+          <div className="w-full max-w-[700px] text-center text-black text-sm sm:text-base font-medium leading-6 sm:leading-7 font-sans">
             {description}
           </div>
         </div>

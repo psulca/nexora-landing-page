@@ -47,7 +47,7 @@ export default function PlatformFeaturesSection({
     const cardInterval = setInterval(() => {
       setActiveCard((prev) => {
         const next = (prev + 1) % cards.length
-        setProgress(0) // Reset progress when card changes
+        setProgress(0)
         return next
       })
     }, autoPlayInterval)
@@ -55,11 +55,10 @@ export default function PlatformFeaturesSection({
     return () => clearInterval(cardInterval)
   }, [autoPlay, autoPlayInterval, cards.length])
 
-  // Handle progress bar animation
   useEffect(() => {
     if (!autoPlay) return
 
-    setProgress(0) // Reset on card change
+    setProgress(0)
     const progressInterval = setInterval(() => {
       setProgress((prev) => {
         const increment = (100 / (autoPlayInterval / 100))
@@ -80,7 +79,6 @@ export default function PlatformFeaturesSection({
 
   return (
     <div className={`w-full ${backgroundColor} ${borderClass} border-black flex flex-col justify-center items-center`}>
-      {/* Header Section */}
       <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 lg:py-10 flex justify-center items-center">
         <div className="w-full max-w-[1000px] flex flex-col justify-start items-center gap-4 sm:gap-6">
           <div className="w-full text-center flex justify-center flex-col text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight md:leading-[60px] font-darker-grotesque tracking-tight">
@@ -89,7 +87,6 @@ export default function PlatformFeaturesSection({
         </div>
       </div>
 
-      {/* Dashboard Preview (if showDashboardPreview is true) */}
       {showDashboardPreview && dashboardImages && dashboardImages.length > 0 && (
         <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 pb-4 sm:pb-6 md:pb-8 flex justify-center items-center">
           <div className="w-full max-w-[800px] flex flex-col justify-center items-center">
@@ -121,10 +118,8 @@ export default function PlatformFeaturesSection({
         </div>
       )}
 
-      {/* Content Section */}
       <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 lg:py-10 overflow-hidden flex justify-center items-center">
         <div className="w-full max-w-[1000px] py-4 md:py-6 flex flex-col lg:flex-row justify-center items-start lg:items-center gap-6 lg:gap-8">
-          {/* Feature Cards - Stacked vertically on all screen sizes, side-by-side with image on lg+ */}
           <div className="w-full lg:w-auto lg:max-w-[400px] flex flex-col gap-4 order-2 lg:order-1">
             {cards.map((card, index) => {
               const isActive = index === activeCard
@@ -158,7 +153,6 @@ export default function PlatformFeaturesSection({
             })}
           </div>
 
-          {/* Right Column - Image */}
           {showImage && cards.some((card) => card.image) && (
             <div className="w-full lg:w-auto flex flex-col justify-center items-center gap-2 order-1 lg:order-2">
               <div className={`${imageContainerClassName} bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] overflow-hidden flex flex-col justify-start items-start relative`}>

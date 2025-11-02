@@ -21,9 +21,6 @@ interface OpportunityCardProps {
   className?: string
 }
 
-/**
- * Generic opportunity card component with dynamic height based on content
- */
 export function OpportunityCard({ data, className = "" }: OpportunityCardProps) {
   const hasLocation = !!data.location
   const hasSkill = !!data.skill
@@ -41,12 +38,9 @@ export function OpportunityCard({ data, className = "" }: OpportunityCardProps) 
         border: "0.5px solid #000000",
       }}
     >
-      {/* Left border accent */}
       <div style={{ width: "1px", background: data.color.border, flexShrink: 0 }} />
 
-      {/* Content */}
       <div style={{ padding: "4.5px", width: "100%", display: "flex", flexDirection: "column", gap: "2px" }}>
-        {/* Category */}
         <div style={{ display: "flex", gap: "3px", alignItems: "center" }}>
           <span
             style={{
@@ -60,7 +54,6 @@ export function OpportunityCard({ data, className = "" }: OpportunityCardProps) 
           </span>
         </div>
 
-        {/* Title */}
         <div
           style={{
             fontFamily: "Inter, sans-serif",
@@ -74,7 +67,6 @@ export function OpportunityCard({ data, className = "" }: OpportunityCardProps) 
           {data.title}
         </div>
 
-        {/* Location */}
         {hasLocation && (
           <div
             style={{
@@ -89,7 +81,6 @@ export function OpportunityCard({ data, className = "" }: OpportunityCardProps) 
           </div>
         )}
 
-        {/* Skill */}
         {hasSkill && (
           <div
             style={{

@@ -48,8 +48,8 @@ export default function LandingPage() {
         <PlatformFeaturesSection
           title="Cómo funciona Nexora"
           cards={heroFeatureCards}
-          backgroundColor="bg-[#FFC942]"
-          activeCardColor="bg-[#76A69D]"
+          backgroundColor="bg-[#FFF9E9]"
+          activeCardColor="bg-[#F7D96C]"
           autoPlay={true}
           showImage={true}
         />
@@ -58,8 +58,8 @@ export default function LandingPage() {
         <PlatformFeaturesSection
           title="Gestiona tus oportunidades de voluntariado"
           cards={documentationCards}
-          backgroundColor="bg-white"
-          activeCardColor="bg-[#FFC942]"
+          backgroundColor="bg-[#F7D96C]"
+          activeCardColor="bg-[#76A69D]"
           autoPlay={true}
           showImage={true}
         />

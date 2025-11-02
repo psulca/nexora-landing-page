@@ -60,19 +60,17 @@ export default function FAQSection() {
 
   return (
     <div className="w-full bg-[#76A69D] border-b-4 border-black flex flex-col justify-center items-center">
-      {/* Header Section */}
       <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 lg:py-10 flex justify-center items-center">
         <div className="w-full max-w-[1000px] flex flex-col justify-start items-start gap-4 sm:gap-6">
-          <div className="w-full text-left flex justify-start flex-col text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight md:leading-[60px] font-darker-grotesque tracking-tight">
+          <div className="w-full text-left flex justify-start flex-col text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight md:leading-[60px] font-darker-grotesque tracking-tight">
             Preguntas Frecuentes
           </div>
-          <div className="w-full text-left text-white/90 text-base sm:text-lg font-normal leading-7 font-sans">
+          <div className="w-full text-left text-black/90 text-base sm:text-lg font-normal leading-7 font-sans">
             Encuentra respuestas a las dudas más comunes sobre cómo usar Nexora.
           </div>
         </div>
       </div>
 
-      {/* FAQ Items Section */}
       <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 lg:py-10 flex justify-center items-center">
         <div className="w-full max-w-[1000px] flex flex-col gap-4">
           {FAQ_DATA.map((item, index) => {

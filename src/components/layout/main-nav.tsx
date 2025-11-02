@@ -146,9 +146,7 @@ export function MainNav({
 
   return (
     <>
-      {/* Desktop Navigation */}
       <nav className="hidden lg:flex justify-between items-center gap-6 flex-1 py-3">
-        {/* Logo/Brand */}
         <Link
           href="/"
           className="flex items-center gap-2 text-black font-black text-xl sm:text-2xl hover:opacity-80 transition-opacity font-darker-grotesque"
@@ -156,7 +154,6 @@ export function MainNav({
           <span>{APP_TEXT.brand}</span>
         </Link>
 
-        {/* Desktop Navigation Menu */}
         <div className="flex items-center">
           <NavigationMenu viewport={false}>
             <NavigationMenuList>
@@ -165,7 +162,6 @@ export function MainNav({
           </NavigationMenu>
         </div>
 
-        {/* Desktop Auth Buttons */}
         <div className="flex gap-3">
           <Button
             asChild
@@ -187,14 +183,12 @@ export function MainNav({
         </div>
       </nav>
 
-      {/* Mobile Navigation */}
       <div className="block lg:hidden py-3">
         <div className="flex items-center justify-between">
           <span className="flex items-center gap-2 text-black font-black text-xl sm:text-2xl font-darker-grotesque">
             {APP_TEXT.brand}
           </span>
           <div className="flex items-center gap-2">
-            {/* Menu Button */}
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="outline" size="icon" className="bg-white border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rounded-none transition-all duration-150">

@@ -21,7 +21,6 @@ const BuildTrustVisibility: React.FC<BuildTrustVisibilityProps> = ({ width = 482
         overflow: "hidden",
       }}
     >
-      {/* Main content container - fixed size like other components */}
       <div
         className="w-[280px] h-[180px] sm:w-[360px] sm:h-[240px]"
         style={{
@@ -165,7 +164,6 @@ const BuildTrustVisibility: React.FC<BuildTrustVisibilityProps> = ({ width = 482
           </div>
         </div>
 
-        {/* Compact description for small screens */}
         <div
           className="flex sm:hidden flex-col"
           style={{
@@ -328,7 +326,6 @@ const BuildTrustVisibility: React.FC<BuildTrustVisibilityProps> = ({ width = 482
           </span>
         </div>
         
-        {/* Small project cards in background for depth */}
         <div
           className="hidden sm:block border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] bg-white"
           style={{

@@ -27,7 +27,6 @@ export function FlexibleCTASection({
 }: FlexibleCTASectionProps) {
   return (
     <div className="w-full bg-[#F7D96C] flex flex-col justify-center items-center py-36">
-      {/* Content */}
       <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16 lg:py-20 flex justify-center items-center">
         <div className="w-full max-w-[1000px] flex flex-col justify-start items-center gap-6 sm:gap-8">
           <div className="self-stretch flex flex-col justify-start items-center gap-4 sm:gap-6">

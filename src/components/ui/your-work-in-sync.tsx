@@ -1,35 +1,24 @@
 import type React from "react"
 
 interface YourWorkInSyncProps {
-  /** Fixed width from Figma: 482px */
   width?: number | string
-  /** Fixed height from Figma: 300px */
   height?: number | string
-  /** Optional className to pass to root */
   className?: string
-  /** Theme palette */
   theme?: "light" | "dark"
 }
-
-/**
- * Your work, in sync – Chat conversation UI
- * Neobrutalist style following the design system
- * Single-file component following the v0-ready pattern used in this repo.
- */
 const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
   width = 482,
   height = 300,
   className = "",
   theme = "light",
 }) => {
-  // Neobrutalist color palette from design system
   const colors = {
     light: {
       surface: "#ffffff",
       textPrimary: "#000000",
       textSecondary: "#6b7280",
-      bubbleLight: "#F7D96C", // Light yellow from design system
-      bubbleDark: "#000000", // Black for dark bubbles
+      bubbleLight: "#F7D96C",
+      bubbleDark: "#000000",
       border: "#000000",
     },
     dark: {
@@ -44,7 +33,6 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
 
   const themeColors = colors[theme]
 
-  // Figma-exported assets
   const imgFrame2147223205 = "/placeholder.svg"
   const imgFrame2147223206 = "/placeholder.svg"
   const imgFrame2147223207 = "/placeholder.svg"
@@ -65,7 +53,6 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
       role="img"
       aria-label="Chat conversation showing team collaboration sync"
     >
-      {/* Root frame size 482×300 – content centered */}
       <div
         style={{
           position: "absolute",
@@ -76,9 +63,7 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
           height: "216px",
         }}
       >
-        {/* Remove the flip transformation and position messages normally */}
         <div style={{ width: "356px", height: "216px", position: "relative", transform: "scale(1.1)" }}>
-          {/* Message 1: Left side with avatar */}
           <div
             style={{
               position: "absolute",
@@ -91,7 +76,6 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
               height: "36px",
             }}
           >
-            {/* Avatar */}
             <div
               className="bg-white border-2 border-black flex-shrink-0"
               style={{
@@ -102,7 +86,6 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
                 backgroundPosition: "center",
               }}
             />
-            {/* Message bubble */}
             <div
               className="border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
               style={{
@@ -129,7 +112,6 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
             </div>
           </div>
 
-          {/* Message 2: Right side with avatar */}
           <div
             style={{
               position: "absolute",
@@ -141,7 +123,6 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
               justifyContent: "flex-end",
             }}
           >
-            {/* Message bubble */}
             <div
               className="border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
               style={{
@@ -165,7 +146,6 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
                 ¡Genial! Nos encantaría contar contigo 🙌
               </span>
             </div>
-            {/* Avatar */}
             <div
               className="bg-white border-2 border-black flex-shrink-0"
               style={{
@@ -178,7 +158,6 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
             />
           </div>
 
-          {/* Message 3: Left side with avatar */}
           <div
             style={{
               position: "absolute",
@@ -191,7 +170,6 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
               height: "36px",
             }}
           >
-            {/* Avatar */}
             <div
               className="bg-white border-2 border-black flex-shrink-0"
               style={{
@@ -202,7 +180,6 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
                 backgroundPosition: "center",
               }}
             />
-            {/* Message bubble */}
             <div
               className="border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]"
               style={{
@@ -229,7 +206,6 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
             </div>
           </div>
 
-          {/* Message 4: Center with send button */}
           <div
             style={{
               position: "absolute",
@@ -241,7 +217,6 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
               height: "36px",
             }}
           >
-            {/* Message bubble */}
             <div
               className="border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]"
               style={{
@@ -265,7 +240,6 @@ const YourWorkInSync: React.FC<YourWorkInSyncProps> = ({
                 Sí 💚 te enviamos los detalles.
               </span>
             </div>
-            {/* Send button */}
             <div
               className="border-2 border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center flex-shrink-0 cursor-pointer transition-all duration-150 hover:translate-x-1 hover:translate-y-1 hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"
               style={{

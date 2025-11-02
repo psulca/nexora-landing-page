@@ -59,7 +59,6 @@ export default function TestimonialsSection() {
 
   return (
     <div className="w-full bg-[#76A69D] border-b-4 border-black flex flex-col justify-center items-center">
-      {/* Header Section */}
       <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 lg:py-10 flex justify-center items-center">
         <div className="w-full max-w-[900px] flex flex-col justify-start items-center gap-4 sm:gap-6">
           <div className="w-full text-center flex justify-center flex-col text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight md:leading-[50px] font-darker-grotesque tracking-tight">
@@ -73,7 +72,6 @@ export default function TestimonialsSection() {
         </div>
       </div>
 
-      {/* Testimonial Content */}
       <div className="self-stretch px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-6 md:py-8 lg:py-10 overflow-hidden flex justify-center items-center">
         <div className="w-full max-w-[900px] bg-white border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] py-4 md:py-6 lg:py-8 px-4 md:px-6 lg:px-8 mx-auto">
           <div className="w-full flex flex-col md:flex-row justify-center items-center md:items-center gap-6 md:gap-8 lg:gap-10">
@@ -115,7 +113,6 @@ export default function TestimonialsSection() {
                 </div>
               </div>
               
-              {/* Navigation Arrows */}
               <div className="flex justify-center md:justify-start items-center gap-[14px] flex-shrink-0 pt-4 md:pt-0">
             <button
               onClick={() =>

@@ -8,9 +8,6 @@ interface OpportunityCardsStackProps {
   style?: React.CSSProperties
 }
 
-/**
- * Generic stack of opportunity cards within a container card
- */
 export function OpportunityCardsStack({ cards, className = "", style }: OpportunityCardsStackProps) {
   return (
     <div

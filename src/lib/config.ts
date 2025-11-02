@@ -1,4 +1,3 @@
-// Constantes de textos de la aplicación
 export const APP_TEXT = {
   brand: "Nexora",
   tagline: "Conectando voluntarios con causas",
@@ -86,7 +85,6 @@ export const APP_TEXT = {
   },
 } as const
 
-// Constantes de metadata
 export const METADATA = {
   title: "Nexora - Conecta tu pasión con causas que importan",
   description:
